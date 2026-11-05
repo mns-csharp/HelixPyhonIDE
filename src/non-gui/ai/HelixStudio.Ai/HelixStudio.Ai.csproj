@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Ai</RootNamespace>
+    <AssemblyName>HelixStudio.Ai</AssemblyName>
+    <!-- The ONLY assembly in this repository that is not C# 7.3, and deliberately so.
+         The official Anthropic SDK's request types (MessageCreateParams, ThinkingConfigAdaptive,
+         ...) expose `init`-only setters, which a C# 7.3 compiler cannot assign at all — not a
+         style problem, a hard "error CS8370: Feature 'init-only setters' is not available".
+         Its streaming surface returns IAsyncEnumerable, which needs C# 8's `await foreach`.
+         LangVersion is independent of TargetFramework, so raising it here keeps the whole
+         product on net472 while letting this one assembly consume the SDK as designed. The
+         raise is contained: nothing else references these language features, and every other
+         project stays at 7.3.
+
+         `init` setters additionally require System.Runtime.CompilerServices.IsExternalInit,
+         which only exists from net5.0 onward — Compat/IsExternalInit.cs supplies it. -->
+    <LangVersion>9.0</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Official Anthropic SDK. 12.40.0 ships netstandard2.0 alongside net8.0/net9.0, so net472
+         consumes it natively — verified with a restore that produced zero NU1701 fallback
+         warnings. It brings 13 transitive assemblies (System.Text.Json,
+         Microsoft.Bcl.AsyncInterfaces, System.Net.ServerSentEvents, ...) and needs 8 binding
+         redirects in the host .exe.config; see AiProviders.md. -->
+    <PackageReference Include="Anthropic" Version="12.40.0" />
+    <!-- The OpenAI provider is hand-written against the REST shape rather than the OpenAI SDK:
+         this assembly already carries System.Text.Json transitively, and a second vendor SDK
+         would double the net472 binding-redirect surface for one HTTP call. -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+  </ItemGroup>
+</Project>

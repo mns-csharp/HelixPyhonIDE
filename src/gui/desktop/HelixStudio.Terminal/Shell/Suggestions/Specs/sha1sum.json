@@ -1,0 +1,6 @@
+{
+  "name": "sha1sum",
+  "synopsis": "sha1sum [file ...]",
+  "description": "Print the SHA-1 checksum of a file",
+  "args": [ { "kind": "file", "many": true } ]
+}

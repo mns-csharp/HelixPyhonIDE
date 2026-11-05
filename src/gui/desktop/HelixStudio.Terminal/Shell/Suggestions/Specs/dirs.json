@@ -1,0 +1,8 @@
+{
+  "name": "dirs",
+  "synopsis": "dirs [-c]",
+  "description": "Show the directory stack",
+  "options": [
+    { "names": ["-c"], "description": "Clear the directory stack" }
+  ]
+}

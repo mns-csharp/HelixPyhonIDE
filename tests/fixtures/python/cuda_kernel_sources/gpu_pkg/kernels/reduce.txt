@@ -1,0 +1,7 @@
+// Fact-1: the same thing, but the file is named .txt. Common when the kernel is
+// treated as data rather than as source.
+extern "C" __global__ void reduce_sum(const float* in, float* out, int n)
+{
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    if (i < n) atomicAdd(out, in[i]);
+}

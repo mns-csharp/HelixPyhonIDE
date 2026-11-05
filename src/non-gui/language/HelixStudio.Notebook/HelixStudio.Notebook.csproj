@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Notebooks</RootNamespace>
+    <AssemblyName>HelixStudio.Notebook</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Kernel\helix_kernel_host.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- No ProjectReference on purpose. A notebook is a document format: reading and writing one, and
+       laying its code cells out as a compilable view, needs nothing from the solution model, the
+       editor or WinForms. That is what lets the fast non-GUI suite cover all of it, including a
+       sweep over the real 52 MB fixture corpus. The kernel client is the one part that touches a
+       process, and it talks to a script rather than to an IDE. -->
+</Project>

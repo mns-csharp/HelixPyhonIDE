@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.CppAsmCompiler</RootNamespace>
+    <AssemblyName>HelixStudio.CppAsmCompiler</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The C++ front end. CUDA is C++, so its lexer/parser/AST is the C++ one already in
+         this repo — a second C++ parser would be a second set of bugs. -->
+    <ProjectReference Include="..\HelixStudio.CudaVirtualCompiler\HelixStudio.CudaVirtualCompiler.csproj" />
+  </ItemGroup>
+</Project>

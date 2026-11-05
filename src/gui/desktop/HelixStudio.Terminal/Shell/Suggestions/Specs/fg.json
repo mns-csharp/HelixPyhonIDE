@@ -1,0 +1,6 @@
+{
+  "name": "fg",
+  "synopsis": "fg [%n]",
+  "description": "Bring a background job to the foreground",
+  "args": [ { "kind": "job", "many": true } ]
+}

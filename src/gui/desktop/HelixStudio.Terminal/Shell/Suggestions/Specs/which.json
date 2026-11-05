@@ -1,0 +1,6 @@
+{
+  "name": "which",
+  "synopsis": "which name ...",
+  "description": "Show the full path of a command",
+  "args": [ { "kind": "command" } ]
+}

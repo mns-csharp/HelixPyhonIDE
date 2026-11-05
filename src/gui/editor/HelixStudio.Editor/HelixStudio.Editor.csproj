@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Editor</RootNamespace>
+    <AssemblyName>HelixStudio.Editor</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelixStudio.Completion\HelixStudio.Completion.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Catalog\HelixStudio.Catalog.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Markdown\HelixStudio.Markdown.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Notebook\HelixStudio.Notebook.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.CudaVirtualCompiler\HelixStudio.CudaVirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\workspace\HelixStudio.Workspace\HelixStudio.Workspace.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.Refactoring\HelixStudio.Refactoring.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelixStudio.UI.HelixTextEditorNET\HelixStudio.UI.HelixTextEditorNET.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+</Project>

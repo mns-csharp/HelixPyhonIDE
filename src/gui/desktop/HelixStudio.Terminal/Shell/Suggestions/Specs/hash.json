@@ -1,0 +1,6 @@
+{
+  "name": "hash",
+  "synopsis": "hash",
+  "description": "Placeholder for remembering command locations; always succeeds without doing anything",
+  "args": [ { "kind": "command" } ]
+}

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.18)
+project(new_project_creation_testing40 LANGUAGES CUDA CXX)
+add_executable(new_project_creation_testing40 main.cu)
+set_target_properties(new_project_creation_testing40 PROPERTIES CUDA_ARCHITECTURES 86)
+add_subdirectory("new_project_creation_testing41")
+add_subdirectory("new_project_creation_testing42")

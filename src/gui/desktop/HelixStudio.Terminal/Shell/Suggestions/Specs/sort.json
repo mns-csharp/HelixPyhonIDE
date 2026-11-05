@@ -1,0 +1,14 @@
+{
+  "name": "sort",
+  "synopsis": "sort [-nruf] [-k field] [-t sep] [file ...]",
+  "description": "Sort the lines of a file",
+  "options": [
+    { "names": ["-n"], "description": "Sort numerically" },
+    { "names": ["-f"], "description": "Ignore case" },
+    { "names": ["-r"], "description": "Reverse the order" },
+    { "names": ["-u"], "description": "Keep only the first of each run of equal lines" },
+    { "names": ["-k"], "description": "Sort by this field instead of the whole line", "value": "text" },
+    { "names": ["-t"], "description": "Use this character to separate fields", "value": "text" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

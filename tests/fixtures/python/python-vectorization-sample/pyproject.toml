@@ -1,0 +1,10 @@
+[project]
+name = "pyvectorsample"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "Hand-crafted fixture exercising HelixStudio's loop <-> NumPy vectorization refactoring (editor context menu: Vectorize / Un-vectorize) from many angles: every supported forward/reverse pattern with realistic variations, deliberate near-misses the engine must refuse to touch, naturalistic real-world-shaped code, and boundary cases."
+dependencies = ["numpy"]
+
+[tool.helixstudio]
+interface-style = "protocol"
+kind = "library"

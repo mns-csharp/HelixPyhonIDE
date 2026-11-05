@@ -1,0 +1,10 @@
+{
+  "name": "date",
+  "synopsis": "date [-u] [-d text] [+format]",
+  "description": "Show or format the current date and time",
+  "options": [
+    { "names": ["-u"], "description": "Use UTC instead of local time" },
+    { "names": ["-d"], "description": "Use this date instead of now", "value": "text" }
+  ],
+  "args": [ { "kind": "text" } ]
+}

@@ -1,0 +1,17 @@
+# structure repair for D:\git\HelixPython\tests\fixtures\python\python-test-sample-oop
+# BEGIN is written BEFORE the operation runs, DONE after it completes.
+# An entry with no matching DONE is an operation that was interrupted; the solution is half-repaired and needs it undone.
+BEGIN MoveDirectory: src/app_server -> app_server
+DONE MoveDirectory: src/app_server -> app_server
+BEGIN MoveDirectory: src/app_gui -> app_gui
+DONE MoveDirectory: src/app_gui -> app_gui
+BEGIN MoveDirectory: src/app_cli -> app_cli
+DONE MoveDirectory: src/app_cli -> app_cli
+BEGIN MoveDirectory: src/lib_core -> lib_core
+DONE MoveDirectory: src/lib_core -> lib_core
+BEGIN MoveDirectory: src/lib_utils -> lib_utils
+DONE MoveDirectory: src/lib_utils -> lib_utils
+BEGIN RewriteManifest: pyproject.toml
+DONE RewriteManifest: pyproject.toml
+BEGIN DeleteEmptyDirectory: src
+DONE DeleteEmptyDirectory: src

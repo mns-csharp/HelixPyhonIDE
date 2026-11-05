@@ -1,0 +1,6 @@
+{
+  "name": "wait",
+  "synopsis": "wait [%n]",
+  "description": "Wait for a background job, or all of them, to finish",
+  "args": [ { "kind": "job", "many": true } ]
+}

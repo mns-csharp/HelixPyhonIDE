@@ -1,0 +1,14 @@
+{
+  "name": "uname",
+  "synopsis": "uname [-a]",
+  "description": "Print system information",
+  "options": [
+    { "names": ["-a"], "description": "Print all of the fields below" },
+    { "names": ["-s"], "description": "Print the kernel name" },
+    { "names": ["-n"], "description": "Print the machine name" },
+    { "names": ["-r"], "description": "Print the OS release" },
+    { "names": ["-v"], "description": "Print the OS version" },
+    { "names": ["-m"], "description": "Print the machine hardware architecture" },
+    { "names": ["-o"], "description": "Print the operating system" }
+  ]
+}

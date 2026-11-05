@@ -1,0 +1,5 @@
+{
+  "name": "hostname",
+  "synopsis": "hostname",
+  "description": "Print the machine name"
+}

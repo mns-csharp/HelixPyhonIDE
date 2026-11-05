@@ -1,0 +1,9 @@
+{
+  "name": "type",
+  "synopsis": "type [-t] name ...",
+  "description": "Show how a name would be interpreted if used as a command",
+  "options": [
+    { "names": ["-t"], "description": "Print only the kind of the command, not the details" }
+  ],
+  "args": [ { "kind": "command" } ]
+}

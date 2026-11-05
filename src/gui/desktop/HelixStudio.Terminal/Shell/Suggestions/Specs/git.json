@@ -1,0 +1,225 @@
+{
+  "name": "git",
+  "description": "Version control",
+  "subcommands": [
+    {
+      "name": "add",
+      "synopsis": "git add <file>...",
+      "description": "Stage changes for the next commit",
+      "options": [
+        { "names": ["-A", "--all"], "description": "Stage all changes, including deletions" },
+        { "names": ["-p", "--patch"], "description": "Interactively choose hunks to stage" }
+      ],
+      "args": [ { "kind": "git-file", "many": true } ]
+    },
+    {
+      "name": "branch",
+      "synopsis": "git branch [-d] <branch>",
+      "description": "List, create or delete branches",
+      "options": [
+        { "names": ["-d"], "description": "Delete a fully merged branch" },
+        { "names": ["-D"], "description": "Force-delete a branch" },
+        { "names": ["-a"], "description": "List remote-tracking branches too" },
+        { "names": ["-r"], "description": "List remote-tracking branches only" },
+        { "names": ["-v"], "description": "Show the last commit on each branch" },
+        { "names": ["-m"], "description": "Rename a branch" }
+      ],
+      "args": [ { "kind": "git-branch" } ]
+    },
+    {
+      "name": "checkout",
+      "synopsis": "git checkout <branch>",
+      "description": "Switch branches or restore working tree files",
+      "options": [
+        { "names": ["-b"], "description": "Create a new branch and switch to it" }
+      ],
+      "args": [ { "kind": "git-branch" } ]
+    },
+    {
+      "name": "switch",
+      "synopsis": "git switch <branch>",
+      "description": "Switch to another branch",
+      "options": [
+        { "names": ["-c"], "description": "Create a new branch and switch to it" }
+      ],
+      "args": [ { "kind": "git-branch" } ]
+    },
+    {
+      "name": "commit",
+      "synopsis": "git commit -m <message>",
+      "description": "Record staged changes to the repository",
+      "options": [
+        { "names": ["-m"], "description": "Use this commit message", "value": "text" },
+        { "names": ["-a"], "description": "Automatically stage modified and deleted files" },
+        { "names": ["--amend"], "description": "Replace the previous commit instead of adding a new one" }
+      ]
+    },
+    {
+      "name": "diff",
+      "synopsis": "git diff <file>...",
+      "description": "Show changes between commits, the index and the working tree",
+      "options": [
+        { "names": ["--staged", "--cached"], "description": "Compare the index to the last commit instead of the working tree" }
+      ],
+      "args": [ { "kind": "git-file", "many": true } ]
+    },
+    {
+      "name": "fetch",
+      "synopsis": "git fetch <remote> <branch>",
+      "description": "Download objects and refs from another repository",
+      "args": [ { "kind": "git-remote" }, { "kind": "git-branch" } ]
+    },
+    {
+      "name": "log",
+      "synopsis": "git log",
+      "description": "Show the commit history",
+      "options": [
+        { "names": ["--oneline"], "description": "Show each commit on a single line" },
+        { "names": ["-n"], "description": "Limit the number of commits shown", "value": "text" },
+        { "names": ["-p"], "description": "Show the diff introduced by each commit" }
+      ]
+    },
+    {
+      "name": "merge",
+      "synopsis": "git merge <branch>",
+      "description": "Join two or more development histories together",
+      "options": [
+        { "names": ["--no-ff"], "description": "Always create a merge commit" }
+      ],
+      "args": [ { "kind": "git-branch" } ]
+    },
+    {
+      "name": "pull",
+      "synopsis": "git pull <remote> <branch>",
+      "description": "Fetch and integrate with another repository or branch",
+      "options": [
+        { "names": ["--rebase"], "description": "Rebase the current branch instead of merging" }
+      ],
+      "args": [ { "kind": "git-remote" }, { "kind": "git-branch" } ]
+    },
+    {
+      "name": "push",
+      "synopsis": "git push <remote> <branch>",
+      "description": "Update remote refs and associated objects",
+      "options": [
+        { "names": ["-u", "--set-upstream"], "description": "Track the remote branch from now on" },
+        { "names": ["-f", "--force"], "description": "Overwrite the history of the remote branch" }
+      ],
+      "args": [ { "kind": "git-remote" }, { "kind": "git-branch" } ]
+    },
+    {
+      "name": "rebase",
+      "synopsis": "git rebase <branch>",
+      "description": "Reapply commits on top of another base",
+      "options": [
+        { "names": ["-i", "--interactive"], "description": "Edit the list of commits before replaying them" },
+        { "names": ["--continue"], "description": "Continue after resolving conflicts" },
+        { "names": ["--abort"], "description": "Abort the rebase and return to the original branch" }
+      ],
+      "args": [ { "kind": "git-branch" } ]
+    },
+    {
+      "name": "remote",
+      "synopsis": "git remote",
+      "description": "Manage the set of tracked repositories",
+      "options": [
+        { "names": ["-v", "--verbose"], "description": "Show the URL for each remote" }
+      ],
+      "subcommands": [
+        {
+          "name": "add",
+          "synopsis": "git remote add <name> <url>",
+          "description": "Add a new remote",
+          "args": [ { "kind": "text" }, { "kind": "text" } ]
+        },
+        {
+          "name": "remove",
+          "aliases": ["rm"],
+          "synopsis": "git remote remove <name>",
+          "description": "Remove a remote",
+          "args": [ { "kind": "git-remote" } ]
+        },
+        {
+          "name": "rename",
+          "synopsis": "git remote rename <old> <new>",
+          "description": "Rename a remote",
+          "args": [ { "kind": "git-remote" }, { "kind": "text" } ]
+        }
+      ]
+    },
+    {
+      "name": "reset",
+      "synopsis": "git reset [<commit>]",
+      "description": "Reset the current HEAD to a specified state",
+      "options": [
+        { "names": ["--hard"], "description": "Discard changes in the working tree and index too" },
+        { "names": ["--soft"], "description": "Keep changes staged" },
+        { "names": ["--mixed"], "description": "Unstage changes but keep them in the working tree" }
+      ],
+      "args": [ { "kind": "text" } ]
+    },
+    {
+      "name": "restore",
+      "synopsis": "git restore <file>...",
+      "description": "Restore working tree files",
+      "options": [
+        { "names": ["--staged"], "description": "Restore the index instead of the working tree" }
+      ],
+      "args": [ { "kind": "git-file", "many": true } ]
+    },
+    {
+      "name": "stash",
+      "synopsis": "git stash",
+      "description": "Stash changes in a dirty working directory",
+      "subcommands": [
+        {
+          "name": "push",
+          "synopsis": "git stash push",
+          "description": "Stash the working tree changes",
+          "options": [
+            { "names": ["-m", "--message"], "description": "Use this message for the stash", "value": "text" }
+          ]
+        },
+        {
+          "name": "pop",
+          "synopsis": "git stash pop",
+          "description": "Restore and drop the most recent stash"
+        },
+        {
+          "name": "list",
+          "synopsis": "git stash list",
+          "description": "List stashed changes"
+        },
+        {
+          "name": "apply",
+          "synopsis": "git stash apply",
+          "description": "Restore a stash without dropping it"
+        },
+        {
+          "name": "drop",
+          "synopsis": "git stash drop",
+          "description": "Discard a stash without restoring it"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "synopsis": "git status",
+      "description": "Show the working tree status",
+      "options": [
+        { "names": ["-s", "--short"], "description": "Show the short status format" },
+        { "names": ["-b"], "description": "Show the branch name too" }
+      ]
+    },
+    {
+      "name": "tag",
+      "synopsis": "git tag <name>",
+      "description": "Create, list, delete or verify a tag",
+      "options": [
+        { "names": ["-d"], "description": "Delete a tag" },
+        { "names": ["-a"], "description": "Create an annotated tag" }
+      ],
+      "args": [ { "kind": "text" } ]
+    }
+  ]
+}

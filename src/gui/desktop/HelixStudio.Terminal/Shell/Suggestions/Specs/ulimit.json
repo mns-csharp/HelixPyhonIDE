@@ -1,0 +1,5 @@
+{
+  "name": "ulimit",
+  "synopsis": "ulimit",
+  "description": "Placeholder for the resource limits command; always succeeds without changing anything"
+}

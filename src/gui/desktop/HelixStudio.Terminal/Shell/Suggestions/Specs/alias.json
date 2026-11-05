@@ -1,0 +1,6 @@
+{
+  "name": "alias",
+  "synopsis": "alias [name[=value] ...]",
+  "description": "Define or display command aliases",
+  "args": [ { "kind": "text", "many": true } ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "tee",
+  "synopsis": "tee [-a] file ...",
+  "description": "Copy standard input to the screen and to files",
+  "options": [
+    { "names": ["-a"], "description": "Append to the files instead of overwriting them" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

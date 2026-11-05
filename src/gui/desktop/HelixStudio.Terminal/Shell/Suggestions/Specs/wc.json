@@ -1,0 +1,12 @@
+{
+  "name": "wc",
+  "synopsis": "wc [-lwcm] [file ...]",
+  "description": "Count lines, words and bytes in a file",
+  "options": [
+    { "names": ["-l"], "description": "Count lines only" },
+    { "names": ["-w"], "description": "Count words only" },
+    { "names": ["-c"], "description": "Count bytes only" },
+    { "names": ["-m"], "description": "Count characters only" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

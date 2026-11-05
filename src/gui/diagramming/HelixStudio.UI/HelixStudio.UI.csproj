@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.UI</RootNamespace>
+    <AssemblyName>HelixStudio.UI</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(RepositoryRoot)src\gui\shared\ToolbarIconDiskLoader.cs">
+      <Link>Shared\ToolbarIconDiskLoader.cs</Link>
+    </Compile>
+    <ProjectReference Include="..\..\..\non-gui\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(RepositoryRoot)assets\product\app\app_main.ico">
+      <LogicalName>HelixStudio.UI.app_main.ico</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- VS2017 WinForms designer nesting -->
+  <ItemGroup>
+    <Compile Update="Controls\LunaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\LunaForm.Designer.cs">
+      <DependentUpon>LunaForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Controls\LunaForm.resx">
+      <DependentUpon>LunaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Controls\MinimapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\MinimapForm.Designer.cs">
+      <DependentUpon>MinimapForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Controls\MinimapForm.resx">
+      <DependentUpon>MinimapForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Controls\ToolsPaletteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls\ToolsPaletteForm.Designer.cs">
+      <DependentUpon>ToolsPaletteForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Controls\ToolsPaletteForm.resx">
+      <DependentUpon>ToolsPaletteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

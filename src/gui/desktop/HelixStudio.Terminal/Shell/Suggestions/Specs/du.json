@@ -1,0 +1,11 @@
+{
+  "name": "du",
+  "synopsis": "du [-sha] [path ...]",
+  "description": "Show disk usage of files and directories",
+  "options": [
+    { "names": ["-s"], "description": "Show only a total for each argument" },
+    { "names": ["-h"], "description": "Sizes in K, M, G" },
+    { "names": ["-a"], "description": "Show sizes for files too, not just directories" }
+  ],
+  "args": [ { "kind": "folder", "many": true } ]
+}

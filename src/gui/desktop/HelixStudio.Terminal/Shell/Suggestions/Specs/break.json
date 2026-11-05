@@ -1,0 +1,6 @@
+{
+  "name": "break",
+  "synopsis": "break [n]",
+  "description": "Exit from a for, while or until loop",
+  "args": [ { "kind": "text" } ]
+}

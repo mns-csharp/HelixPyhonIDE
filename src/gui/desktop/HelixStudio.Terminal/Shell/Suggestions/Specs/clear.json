@@ -1,0 +1,6 @@
+{
+  "name": "clear",
+  "aliases": ["cls"],
+  "synopsis": "clear",
+  "description": "Clear the screen"
+}

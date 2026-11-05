@@ -1,0 +1,5 @@
+{
+  "name": "umask",
+  "synopsis": "umask [mask]",
+  "description": "Placeholder for the file creation mask command; always succeeds without changing anything"
+}

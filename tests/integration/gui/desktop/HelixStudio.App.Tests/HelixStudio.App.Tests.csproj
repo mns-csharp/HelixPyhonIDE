@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.App.Tests</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <ProjectReference Include="..\..\..\..\..\src\gui\desktop\HelixStudio.App\HelixStudio.App.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\gui\editor\HelixStudio.UI.HelixTextEditorNET\HelixStudio.UI.HelixTextEditorNET.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\analysis\HelixStudio.CodeReview\HelixStudio.CodeReview.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\execution\HelixStudio.Debugger\HelixStudio.Debugger.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\workspace\HelixStudio.ImportEngine\HelixStudio.ImportEngine.csproj" />
+    <!-- The built-in GUI Designer add-in is loaded by TestMainForm. -->
+    <ProjectReference Include="..\..\..\..\..\src\gui\addins\HelixStudio.AddIns.GuiDesigner\HelixStudio.AddIns.GuiDesigner.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\code-generation\HelixStudio.GuiDesigner\HelixStudio.GuiDesigner.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\visualization\HelixStudio.Pdb\HelixStudio.Pdb.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+  </ItemGroup>
+  <!-- The one way a test shows a window (book Chapter 4, 4.6.5). -->
+  <ItemGroup><Compile Include="$(RepositoryRoot)tests\TestSupport\TestWindow.cs" Link="TestSupport\TestWindow.cs" /></ItemGroup>
+</Project>

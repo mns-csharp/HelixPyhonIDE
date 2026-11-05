@@ -1,0 +1,9 @@
+{
+  "name": "realpath",
+  "synopsis": "realpath [-m] path ...",
+  "description": "Print the absolute path of a file",
+  "options": [
+    { "names": ["-m"], "description": "Allow a path that does not exist" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

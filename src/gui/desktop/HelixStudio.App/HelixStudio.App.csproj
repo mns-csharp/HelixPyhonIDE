@@ -1,0 +1,451 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HelixPythonNamespace.App</RootNamespace>
+    <AssemblyName>HelixPython</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>$(RepositoryRoot)assets\product\app\app_main.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Recycle-bin deletes for the Welcome page's "Delete from Disk" (FileSystem.DeleteDirectory). -->
+    <Reference Include="Microsoft.VisualBasic" />
+    <Compile Include="$(RepositoryRoot)src\gui\shared\ToolbarIconDiskLoader.cs">
+      <Link>Shared\ToolbarIconDiskLoader.cs</Link>
+    </Compile>
+    <Compile Update="Dialogs\ChordCaptureDialog.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="Dialogs\ChordCaptureDialog.Designer.cs"><DependentUpon>ChordCaptureDialog.cs</DependentUpon></Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ChordCaptureDialog.resx"><DependentUpon>ChordCaptureDialog.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <ProjectReference Include="..\..\..\non-gui\ai\HelixStudio.Ai\HelixStudio.Ai.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.Analysis\HelixStudio.Analysis.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Catalog\HelixStudio.Catalog.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.DeadCode\HelixStudio.DeadCode.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\execution\HelixStudio.CudaEmulator\HelixStudio.CudaEmulator.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\execution\HelixStudio.Debugger\HelixStudio.Debugger.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.CudaVirtualCompiler\HelixStudio.CudaVirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\editor\HelixStudio.Editor\HelixStudio.Editor.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Notebook\HelixStudio.Notebook.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\workspace\HelixStudio.Export\HelixStudio.Export.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\integrations\HelixStudio.Git\HelixStudio.Git.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Linker\HelixStudio.Linker.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.Lint\HelixStudio.Lint.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.Metrics\HelixStudio.Metrics.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.Complexity\HelixStudio.Complexity.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\analysis\HelixStudio.CodeReview\HelixStudio.CodeReview.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\workspace\HelixStudio.Persistence\HelixStudio.Persistence.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\execution\HelixStudio.Profiler\HelixStudio.Profiler.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\execution\HelixStudio.Testing\HelixStudio.Testing.csproj" />
+    <ProjectReference Include="..\..\diagramming\HelixStudio.UI\HelixStudio.UI.csproj" />
+    <ProjectReference Include="..\..\addins\HelixStudio.AddIns\HelixStudio.AddIns.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.VirtualCompiler\HelixStudio.VirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\workspace\HelixStudio.Workspace\HelixStudio.Workspace.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\workspace\HelixStudio.ImportEngine\HelixStudio.ImportEngine.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(RepositoryRoot)assets\product\caption\*.png">
+      <Link>assets\product\caption\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(RepositoryRoot)assets\product\toolbar\*.png">
+      <Link>assets\product\toolbar\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(RepositoryRoot)assets\product\toolbox\*.png">
+      <Link>assets\product\toolbox\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <!-- The Solution Explorer's project-kind and tree icons. These were the one asset family
+         NOT copied to the output, so a deployed build (no repository above the exe for
+         ToolbarIconDiskLoader to fall back to) failed to open a solution with "Could not locate
+         asset 'app_I.png'". Both .png and .ico live here. -->
+    <Content Include="$(RepositoryRoot)assets\product\app\*.png;$(RepositoryRoot)assets\product\app\*.ico">
+      <Link>assets\product\app\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(RepositoryRoot)assets\product\tree\*.png;$(RepositoryRoot)assets\product\tree\*.ico">
+      <Link>assets\product\tree\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(RepositoryRoot)assets\product\banner\helixpython-ide-banner.png">
+      <Link>assets\product\banner\helixpython-ide-banner.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(RepositoryRoot)assets\product\app\tab_close.ico">
+      <LogicalName>HelixStudio.App.tab_close.ico</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="PublishHelixPythonTerminal" BeforeTargets="Build">
+    <MSBuild Projects="$(MSBuildProjectDirectory)\..\HelixStudio.Terminal\HelixStudio.Terminal.csproj"
+             Targets="Restore;Publish"
+             Properties="Configuration=$(Configuration);RuntimeIdentifier=win-x64;SelfContained=true;PublishSingleFile=true;IncludeNativeLibrariesForSelfExtract=true;EnableCompressionInSingleFile=true;PublishDir=$(TargetDir)" />
+  </Target>
+  <!-- Copy pdebug.exe next to HelixStudio.exe after PythonDebugger has built. The
+       Debugger library locates the executable at runtime via AppDomain.BaseDirectory. -->
+  <Target Name="CopyPdebug" AfterTargets="Build">
+    <ItemGroup>
+      <PdebugArtifact Include="$(RepositoryRoot)..\PythonDebugger\bin\$(Configuration)\net472\pdebug.exe" />
+      <PdebugArtifact Include="$(RepositoryRoot)..\PythonDebugger\bin\$(Configuration)\net472\pdebug.exe.config" />
+      <PdebugArtifact Include="$(RepositoryRoot)..\PythonDebugger\bin\$(Configuration)\net472\Newtonsoft.Json.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PdebugArtifact)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" Condition="Exists('%(PdebugArtifact.Identity)')" />
+  </Target>
+  <!-- VS2017 WinForms designer nesting -->
+  <ItemGroup>
+    <Compile Update="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\AddNestedTypeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\AddNestedTypeDialog.Designer.cs">
+      <DependentUpon>AddNestedTypeDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\AddNestedTypeDialog.resx">
+      <DependentUpon>AddNestedTypeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\AddProjectReferenceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\AddProjectReferenceDialog.Designer.cs">
+      <DependentUpon>AddProjectReferenceDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\AddProjectReferenceDialog.resx">
+      <DependentUpon>AddProjectReferenceDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\AnalysisResultsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\AnalysisResultsDialog.Designer.cs">
+      <DependentUpon>AnalysisResultsDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\AnalysisResultsDialog.resx">
+      <DependentUpon>AnalysisResultsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\BuildResultsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\BuildResultsDialog.Designer.cs">
+      <DependentUpon>BuildResultsDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\BuildResultsDialog.resx">
+      <DependentUpon>BuildResultsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\BuildToolSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\BuildToolSettingsDialog.Designer.cs">
+      <DependentUpon>BuildToolSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\BuildToolSettingsDialog.resx">
+      <DependentUpon>BuildToolSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\CodegenDowngradeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\CodegenDowngradeDialog.Designer.cs">
+      <DependentUpon>CodegenDowngradeDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\CodegenDowngradeDialog.resx">
+      <DependentUpon>CodegenDowngradeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\ComplianceResultsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\ComplianceResultsDialog.Designer.cs">
+      <DependentUpon>ComplianceResultsDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ComplianceResultsDialog.resx">
+      <DependentUpon>ComplianceResultsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\ComposeConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\ComposeConfirmDialog.Designer.cs">
+      <DependentUpon>ComposeConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ComposeConfirmDialog.resx">
+      <DependentUpon>ComposeConfirmDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\DeletionConfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\DeletionConfirmationDialog.Designer.cs">
+      <DependentUpon>DeletionConfirmationDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\DeletionConfirmationDialog.resx">
+      <DependentUpon>DeletionConfirmationDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\EditSignatureDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\EditSignatureDialog.Designer.cs">
+      <DependentUpon>EditSignatureDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\EditSignatureDialog.resx">
+      <DependentUpon>EditSignatureDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\ExtractInterfaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\ExtractInterfaceDialog.Designer.cs">
+      <DependentUpon>ExtractInterfaceDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ExtractInterfaceDialog.resx">
+      <DependentUpon>ExtractInterfaceDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\FileConflictDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\FileConflictDialog.Designer.cs">
+      <DependentUpon>FileConflictDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\FileConflictDialog.resx">
+      <DependentUpon>FileConflictDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\FindTypesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\FindTypesDialog.Designer.cs">
+      <DependentUpon>FindTypesDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\FindTypesDialog.resx">
+      <DependentUpon>FindTypesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\GoToTypePickerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\GoToTypePickerForm.Designer.cs">
+      <DependentUpon>GoToTypePickerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\GoToTypePickerForm.resx">
+      <DependentUpon>GoToTypePickerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\GridSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\GridSettingsDialog.Designer.cs">
+      <DependentUpon>GridSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\GridSettingsDialog.resx">
+      <DependentUpon>GridSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\ImportDirectoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\ImportDirectoryDialog.Designer.cs">
+      <DependentUpon>ImportDirectoryDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ImportDirectoryDialog.resx">
+      <DependentUpon>ImportDirectoryDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\KeyBindingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\KeyBindingsDialog.Designer.cs">
+      <DependentUpon>KeyBindingsDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\KeyBindingsDialog.resx">
+      <DependentUpon>KeyBindingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\ManagePackagesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\ManagePackagesDialog.Designer.cs">
+      <DependentUpon>ManagePackagesDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ManagePackagesDialog.resx">
+      <DependentUpon>ManagePackagesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\MemberEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\MemberEditorDialog.Designer.cs">
+      <DependentUpon>MemberEditorDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\MemberEditorDialog.resx">
+      <DependentUpon>MemberEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\MemberPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\MemberPickerDialog.Designer.cs">
+      <DependentUpon>MemberPickerDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\MemberPickerDialog.resx">
+      <DependentUpon>MemberPickerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\NodeEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\NodeEditorDialog.Designer.cs">
+      <DependentUpon>NodeEditorDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\NodeEditorDialog.resx">
+      <DependentUpon>NodeEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\PreferencesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\PreferencesDialog.Designer.cs">
+      <DependentUpon>PreferencesDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\PreferencesDialog.resx">
+      <DependentUpon>PreferencesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\PullUpMemberDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\PullUpMemberDialog.Designer.cs">
+      <DependentUpon>PullUpMemberDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\PullUpMemberDialog.resx">
+      <DependentUpon>PullUpMemberDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\PushDownMemberDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\PushDownMemberDialog.Designer.cs">
+      <DependentUpon>PushDownMemberDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\PushDownMemberDialog.resx">
+      <DependentUpon>PushDownMemberDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\PyProjectConflictDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\PyProjectConflictDialog.Designer.cs">
+      <DependentUpon>PyProjectConflictDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\PyProjectConflictDialog.resx">
+      <DependentUpon>PyProjectConflictDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\RelationshipDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\RelationshipDialog.Designer.cs">
+      <DependentUpon>RelationshipDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\RelationshipDialog.resx">
+      <DependentUpon>RelationshipDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\RelationshipPromptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\RelationshipPromptDialog.Designer.cs">
+      <DependentUpon>RelationshipPromptDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\RelationshipPromptDialog.resx">
+      <DependentUpon>RelationshipPromptDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\RenameSymbolDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\RenameSymbolDialog.Designer.cs">
+      <DependentUpon>RenameSymbolDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\RenameSymbolDialog.resx">
+      <DependentUpon>RenameSymbolDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\SelectPythonInterpreterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\SelectPythonInterpreterDialog.Designer.cs">
+      <DependentUpon>SelectPythonInterpreterDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\SelectPythonInterpreterDialog.resx">
+      <DependentUpon>SelectPythonInterpreterDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\SimpleInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\SimpleInputDialog.Designer.cs">
+      <DependentUpon>SimpleInputDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\SimpleInputDialog.resx">
+      <DependentUpon>SimpleInputDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="Dialogs\TypeModelEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialogs\TypeModelEditorDialog.Designer.cs">
+      <DependentUpon>TypeModelEditorDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\TypeModelEditorDialog.resx">
+      <DependentUpon>TypeModelEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

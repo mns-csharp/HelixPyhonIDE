@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
+  <!--
+    Declares the process long-path-aware so Win32 file APIs accept >260-char paths
+    (requires OS LongPathsEnabled=1). Combined with the app.config
+    AppContextSwitchOverrides, this stops net472 silently dropping deeply-nested or
+    long-named source files from analysis.
+  -->
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+    <windowsSettings xmlns:ws2="http://schemas.microsoft.com/SMI/2016/WindowsSettings">
+      <ws2:longPathAware>true</ws2:longPathAware>
+    </windowsSettings>
+  </application>
+</assembly>

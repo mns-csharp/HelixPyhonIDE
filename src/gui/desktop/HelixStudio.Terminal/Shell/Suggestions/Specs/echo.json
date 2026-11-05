@@ -1,0 +1,11 @@
+{
+  "name": "echo",
+  "synopsis": "echo [-neE] [args...]",
+  "description": "Print arguments to standard output",
+  "options": [
+    { "names": ["-n"], "description": "Do not print the trailing newline" },
+    { "names": ["-e"], "description": "Interpret backslash escapes such as \n and \t" },
+    { "names": ["-E"], "description": "Do not interpret backslash escapes (the default)" }
+  ],
+  "args": [ { "kind": "text", "many": true } ]
+}

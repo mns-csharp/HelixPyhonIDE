@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Cli</RootNamespace>
+    <AssemblyName>helix_cli</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\language\HelixStudio.VirtualCompiler\HelixStudio.VirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\language\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <ProjectReference Include="..\..\analysis\HelixStudio.Lint\HelixStudio.Lint.csproj" />
+    <ProjectReference Include="..\..\language\HelixStudio.Linker\HelixStudio.Linker.csproj" />
+    <ProjectReference Include="..\..\analysis\HelixStudio.DeadCode\HelixStudio.DeadCode.csproj" />
+    <ProjectReference Include="..\..\analysis\HelixStudio.Metrics\HelixStudio.Metrics.csproj" />
+    <ProjectReference Include="..\..\analysis\HelixStudio.Analysis\HelixStudio.Analysis.csproj" />
+    <ProjectReference Include="..\..\execution\HelixStudio.Debugger\HelixStudio.Debugger.csproj" />
+    <ProjectReference Include="..\..\execution\HelixStudio.CudaEmulator\HelixStudio.CudaEmulator.csproj" />
+    <ProjectReference Include="..\..\language\HelixStudio.CudaVirtualCompiler\HelixStudio.CudaVirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\code-generation\HelixStudio.GuiDesigner\HelixStudio.GuiDesigner.csproj" />
+    <ProjectReference Include="..\..\workspace\HelixStudio.Workspace\HelixStudio.Workspace.csproj" />
+    <ProjectReference Include="..\..\analysis\HelixStudio.Refactoring\HelixStudio.Refactoring.csproj" />
+    <ProjectReference Include="..\..\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <ProjectReference Include="..\..\visualization\HelixStudio.Pdb\HelixStudio.Pdb.csproj" />
+  </ItemGroup>
+</Project>

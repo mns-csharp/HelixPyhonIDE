@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Markdown</RootNamespace>
+    <AssemblyName>HelixStudio.Markdown</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <!-- Deliberately no ProjectReference. The parser is a pure text-in / model-out engine: it does
+       not read files, does not know what a solution is, and does not touch WinForms. That is what
+       lets the fast non-GUI suite cover it, and what keeps the renderer free to be the only piece
+       that knows about GDI+. -->
+</Project>

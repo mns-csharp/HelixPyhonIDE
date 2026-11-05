@@ -1,0 +1,9 @@
+{
+  "name": "rmdir",
+  "synopsis": "rmdir [-p] dir ...",
+  "description": "Remove empty directories",
+  "options": [
+    { "names": ["-p"], "description": "Also remove each now-empty parent directory" }
+  ],
+  "args": [ { "kind": "folder", "many": true } ]
+}

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Workspace</RootNamespace>
+    <AssemblyName>HelixStudio.Workspace</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <ProjectReference Include="..\..\language\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <ProjectReference Include="..\..\language\HelixStudio.CudaVirtualCompiler\HelixStudio.CudaVirtualCompiler.csproj" />
+    <!-- For KnownExternalModules: the one authority on which top-level module names belong to
+         CPython and which come from an index. VirtualCompiler references only HelixStudio.Python,
+         so this cannot cycle back. -->
+    <ProjectReference Include="..\..\language\HelixStudio.VirtualCompiler\HelixStudio.VirtualCompiler.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PyToCpp\runtime\pyrt.hpp" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,43 @@
+{
+  "name": "set",
+  "synopsis": "set [-abefnuvxC] [-o option] [--] [args...]",
+  "description": "Show or set shell options and the positional parameters",
+  "options": [
+    { "names": ["-e"], "description": "Exit immediately if a command fails" },
+    { "names": ["-u"], "description": "Treat unset variables as an error" },
+    { "names": ["-x"], "description": "Print each command before running it" },
+    { "names": ["-f"], "description": "Disable filename globbing" },
+    { "names": ["-v"], "description": "Print each line of input as it is read" },
+    { "names": ["-C"], "description": "Refuse to overwrite existing files with >" },
+    { "names": ["-n"], "description": "Read commands without running them" },
+    { "names": ["-a"], "description": "Export every variable that is set from now on" },
+    { "names": ["-b"], "description": "Accepted for compatibility; has no effect here" },
+    { "names": ["-m"], "description": "Accepted for compatibility; has no effect here" },
+    { "names": ["-h"], "description": "Accepted for compatibility; has no effect here" },
+    { "names": ["-B"], "description": "Accepted for compatibility; has no effect here" },
+    { "names": ["-H"], "description": "Accepted for compatibility; has no effect here" },
+    {
+      "names": ["-o"],
+      "description": "Set a shell option by name",
+      "value": "choice",
+      "choices": [
+        { "name": "errexit", "description": "Exit immediately if a command fails" },
+        { "name": "nounset", "description": "Treat unset variables as an error" },
+        { "name": "xtrace", "description": "Print each command before running it" },
+        { "name": "noglob", "description": "Disable filename globbing" },
+        { "name": "verbose", "description": "Print each line of input as it is read" },
+        { "name": "noclobber", "description": "Refuse to overwrite existing files with >" },
+        { "name": "pipefail", "description": "Use the last non-zero exit status in a pipeline" },
+        { "name": "allexport", "description": "Export every variable that is set from now on" },
+        { "name": "noexec", "description": "Read commands without running them" },
+        { "name": "vi", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "emacs", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "posix", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "monitor", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "histexpand", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "history", "description": "Accepted for compatibility; has no effect here" }
+      ]
+    }
+  ],
+  "args": [ { "kind": "text", "many": true } ]
+}

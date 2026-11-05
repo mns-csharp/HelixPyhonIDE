@@ -1,0 +1,9 @@
+{
+  "name": "exec",
+  "synopsis": "exec command [args]",
+  "description": "Run a command in place of the current script, using its exit status",
+  "args": [
+    { "kind": "command" },
+    { "kind": "text", "many": true }
+  ]
+}

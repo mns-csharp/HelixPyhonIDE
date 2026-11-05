@@ -1,0 +1,6 @@
+{
+  "name": "md5sum",
+  "synopsis": "md5sum [file ...]",
+  "description": "Print the MD5 checksum of a file",
+  "args": [ { "kind": "file", "many": true } ]
+}

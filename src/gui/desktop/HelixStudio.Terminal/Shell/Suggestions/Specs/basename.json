@@ -1,0 +1,6 @@
+{
+  "name": "basename",
+  "synopsis": "basename path [suffix]",
+  "description": "Strip the directory from a path, leaving its last component",
+  "args": [ { "kind": "path" }, { "kind": "text" } ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "open",
+  "aliases": ["start"],
+  "synopsis": "open path",
+  "description": "Open a file or folder with its associated program",
+  "args": [ { "kind": "path" } ]
+}

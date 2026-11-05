@@ -1,0 +1,10 @@
+{
+  "name": "tail",
+  "synopsis": "tail [-n count] [-f] [file ...]",
+  "description": "Print the last lines of a file",
+  "options": [
+    { "names": ["-n"], "description": "Print this many lines instead of 10", "value": "text" },
+    { "names": ["-f"], "description": "Keep printing new lines as they are written" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

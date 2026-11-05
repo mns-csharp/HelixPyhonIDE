@@ -1,0 +1,6 @@
+{
+  "name": "expr",
+  "synopsis": "expr expression",
+  "description": "Evaluate an expression",
+  "args": [ { "kind": "text", "many": true } ]
+}

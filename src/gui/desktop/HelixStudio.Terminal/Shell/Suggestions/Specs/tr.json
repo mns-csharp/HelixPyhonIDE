@@ -1,0 +1,10 @@
+{
+  "name": "tr",
+  "synopsis": "tr [-ds] set1 [set2]",
+  "description": "Translate or delete characters from standard input",
+  "options": [
+    { "names": ["-d"], "description": "Delete characters in set1 instead of translating them" },
+    { "names": ["-s"], "description": "Squeeze repeated output characters into one" }
+  ],
+  "args": [ { "kind": "text" }, { "kind": "text" } ]
+}

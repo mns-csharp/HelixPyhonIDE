@@ -1,0 +1,10 @@
+{
+  "name": "sed",
+  "synopsis": "sed [-n] [-e] script [file ...]",
+  "description": "Edit text with a stream editor script",
+  "options": [
+    { "names": ["-e"], "description": "Supply the script as an option instead of the first operand", "value": "text" },
+    { "names": ["-n"], "description": "Suppress automatic printing; print only what p asks for" }
+  ],
+  "args": [ { "kind": "text" }, { "kind": "file", "many": true } ]
+}

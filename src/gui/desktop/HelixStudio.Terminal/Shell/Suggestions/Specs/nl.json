@@ -1,0 +1,6 @@
+{
+  "name": "nl",
+  "synopsis": "nl [file ...]",
+  "description": "Number the lines of a file",
+  "args": [ { "kind": "file", "many": true } ]
+}

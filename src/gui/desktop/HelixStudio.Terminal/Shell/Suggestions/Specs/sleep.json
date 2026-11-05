@@ -1,0 +1,6 @@
+{
+  "name": "sleep",
+  "synopsis": "sleep seconds",
+  "description": "Pause for a given amount of time",
+  "args": [ { "kind": "text", "many": true } ]
+}

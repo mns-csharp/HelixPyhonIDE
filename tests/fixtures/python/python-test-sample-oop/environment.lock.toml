@@ -1,0 +1,595 @@
+# Written by HelixPython on every run. This is the environment that ANSWERED;
+# pyproject.toml is what was asked for. Do not edit by hand.
+
+[capture]
+product = "HelixPython"
+product_version = "0.0.0.0"
+complete = false
+incomplete_because = "the interpreter was not identified (not found); the installed packages could not be listed"
+
+[machine]
+operating_system = "Microsoft Windows NT 6.2.9200.0"
+architecture = "x64"
+
+[interpreter]
+path = ""
+outcome = "not found"
+detail = "no interpreter was resolved for this run"
+
+[packages]
+resolved = false
+count = 0
+detail = "no interpreter to ask"
+
+[toolchains]
+scan_complete = true
+
+[[toolchain]]
+language = "Python"
+component = "CPython interpreter"
+outcome = "identified"
+version = "3.11.0"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+
+[[toolchain]]
+language = "Python"
+component = "Python 3.14 (default)"
+outcome = "identified"
+version = "3.14"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe"
+
+[[toolchain]]
+language = "Python"
+component = "Python 3.11"
+outcome = "identified"
+version = "3.11"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
+
+[[toolchain]]
+language = "Python"
+component = "Python 3.10"
+outcome = "identified"
+version = "3.10"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+
+[[toolchain]]
+language = "Python"
+component = "pip"
+outcome = "identified"
+version = "26.1.2"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\pip.exe"
+
+[[toolchain]]
+language = "Python"
+component = "uv"
+outcome = "not found"
+detail = "uv was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Python"
+component = "Poetry"
+outcome = "not found"
+detail = "poetry was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Python"
+component = "Conda"
+outcome = "not found"
+detail = "conda was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "C / C++"
+component = "GCC"
+outcome = "identified"
+version = "2.95"
+path = "C:\\FPC\\3.2.2\\bin\\i386-Win32\\gcc.exe"
+
+[[toolchain]]
+language = "C / C++"
+component = "G++"
+outcome = "identified"
+version = "15.2.0"
+path = "C:\\mingw64\\bin\\g++.exe"
+
+[[toolchain]]
+language = "C / C++"
+component = "Clang"
+outcome = "identified"
+version = "22.1.8"
+path = "C:\\Program Files\\LLVM\\bin\\clang.exe"
+
+[[toolchain]]
+language = "C / C++"
+component = "MSVC (cl.exe)"
+outcome = "not found"
+detail = "cl was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "C / C++"
+component = "CMake"
+outcome = "identified"
+version = "4.2.3"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\cmake.exe"
+
+[[toolchain]]
+language = "C / C++"
+component = "Ninja"
+outcome = "identified"
+version = "1.13.0"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\ninja.exe"
+
+[[toolchain]]
+language = "C / C++"
+component = "GNU Make"
+outcome = "identified"
+version = "3.82"
+path = "C:\\FPC\\3.2.2\\bin\\i386-Win32\\make.exe"
+
+[[toolchain]]
+language = "C / C++"
+component = "GDB"
+outcome = "identified"
+version = "7.2"
+path = "C:\\FPC\\3.2.2\\bin\\i386-Win32\\gdb.exe"
+
+[[toolchain]]
+language = "CUDA"
+component = "nvcc"
+outcome = "identified"
+version = "13.3"
+path = "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin\\nvcc.exe"
+
+[[toolchain]]
+language = "CUDA"
+component = "Driver / nvidia-smi"
+outcome = "identified"
+version = "13.1"
+path = "C:\\Windows\\system32\\nvidia-smi.exe"
+
+[[toolchain]]
+language = ".NET / C#"
+component = "dotnet CLI"
+outcome = "identified"
+version = "10.0.401"
+path = "C:\\Program Files\\dotnet\\dotnet.exe"
+
+[[toolchain]]
+language = ".NET / C#"
+component = "SDK 2.1.602"
+outcome = "identified"
+version = "2.1.602"
+path = "C:\\Program Files\\dotnet\\sdk\\2.1.602"
+
+[[toolchain]]
+language = ".NET / C#"
+component = "SDK 8.0.401"
+outcome = "identified"
+version = "8.0.401"
+path = "C:\\Program Files\\dotnet\\sdk\\8.0.401"
+
+[[toolchain]]
+language = ".NET / C#"
+component = "SDK 9.0.306"
+outcome = "identified"
+version = "9.0.306"
+path = "C:\\Program Files\\dotnet\\sdk\\9.0.306"
+
+[[toolchain]]
+language = ".NET / C#"
+component = "SDK 10.0.401"
+outcome = "identified"
+version = "10.0.401"
+path = "C:\\Program Files\\dotnet\\sdk\\10.0.401"
+
+[[toolchain]]
+language = ".NET / C#"
+component = "MSBuild"
+outcome = "identified"
+version = "4.8.9032"
+path = "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\MSBuild.exe"
+
+[[toolchain]]
+language = "Java"
+component = "JRE / JDK runtime"
+outcome = "identified"
+version = "25.0.3"
+path = "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.3.9-hotspot\\bin\\java.exe"
+
+[[toolchain]]
+language = "Java"
+component = "javac compiler"
+outcome = "identified"
+version = "25.0.3"
+path = "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.3.9-hotspot\\bin\\javac.exe"
+
+[[toolchain]]
+language = "Java"
+component = "Maven"
+outcome = "identified"
+version = "3.9.16"
+path = "C:\\Users\\Admin\\.local\\opt\\apache-maven-3.9.16\\bin\\mvn.cmd"
+
+[[toolchain]]
+language = "Java"
+component = "Gradle"
+outcome = "not found"
+detail = "gradle was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Rust"
+component = "rustc"
+outcome = "identified"
+version = "1.97.1"
+path = "C:\\Users\\Admin\\.cargo\\bin\\rustc.exe"
+
+[[toolchain]]
+language = "Rust"
+component = "Cargo"
+outcome = "identified"
+version = "1.97.1"
+path = "C:\\Users\\Admin\\.cargo\\bin\\cargo.exe"
+
+[[toolchain]]
+language = "Rust"
+component = "rustup"
+outcome = "identified"
+version = "1.29.0"
+path = "C:\\Users\\Admin\\.cargo\\bin\\rustup.exe"
+
+[[toolchain]]
+language = "Go"
+component = "Go toolchain"
+outcome = "identified"
+version = "1.26.5"
+path = "C:\\Program Files\\Go\\bin\\go.exe"
+
+[[toolchain]]
+language = "JavaScript / TypeScript"
+component = "Node.js"
+outcome = "identified"
+version = "24.13.1"
+path = "C:\\Program Files\\nodejs\\node.exe"
+
+[[toolchain]]
+language = "JavaScript / TypeScript"
+component = "npm"
+outcome = "identified"
+version = "11.8.0"
+path = "C:\\Program Files\\nodejs\\npm.cmd"
+
+[[toolchain]]
+language = "JavaScript / TypeScript"
+component = "TypeScript (tsc)"
+outcome = "identified"
+version = "7.0.2"
+path = "C:\\Users\\Admin\\AppData\\Roaming\\npm\\tsc.cmd"
+
+[[toolchain]]
+language = "JavaScript / TypeScript"
+component = "Deno"
+outcome = "not found"
+detail = "deno was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Julia"
+component = "Julia"
+outcome = "identified"
+version = "1.12.6"
+path = "C:\\Users\\Admin\\.julia\\juliaup\\julia-1.12.6+0.x64.w64.mingw32\\bin\\julia.exe"
+
+[[toolchain]]
+language = "Ada"
+component = "GNAT"
+outcome = "not found"
+detail = "gnat was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Ada"
+component = "Alire"
+outcome = "not found"
+detail = "alr was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Bash"
+component = "Bash"
+outcome = "identified"
+version = "5.2.26"
+path = "C:\\Program Files\\Git\\bin\\bash.exe"
+
+[[toolchain]]
+language = "C3"
+component = "c3c"
+outcome = "not found"
+detail = "c3c was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "COBOL"
+component = "GnuCOBOL"
+outcome = "not found"
+detail = "cobc was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Clojure"
+component = "Clojure CLI"
+outcome = "not found"
+detail = "clojure was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Clojure"
+component = "Leiningen"
+outcome = "not found"
+detail = "lein was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "D"
+component = "DMD"
+outcome = "not found"
+detail = "dmd was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "D"
+component = "LDC"
+outcome = "not found"
+detail = "ldc2 was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Dart"
+component = "Dart SDK"
+outcome = "identified"
+version = "3.12.2"
+path = "D:\\toolchains\\flutter\\bin\\dart.bat"
+
+[[toolchain]]
+language = "Elixir"
+component = "Elixir"
+outcome = "not found"
+detail = "elixir was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Erlang"
+component = "Erlang/OTP emulator"
+outcome = "not found"
+detail = "erl was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "F#"
+component = "F# Interactive"
+outcome = "not found"
+detail = "fsi was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Fortran"
+component = "gfortran"
+outcome = "identified"
+version = "15.2.0"
+path = "C:\\mingw64\\bin\\gfortran.exe"
+
+[[toolchain]]
+language = "Fortran"
+component = "Intel ifx"
+outcome = "not found"
+detail = "ifx was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Fortran"
+component = "Flang"
+outcome = "identified"
+version = "22.1.8"
+path = "C:\\Program Files\\LLVM\\bin\\flang.exe"
+
+[[toolchain]]
+language = "Groovy"
+component = "Groovy"
+outcome = "not found"
+detail = "groovy was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Haskell"
+component = "GHC"
+outcome = "not found"
+detail = "ghc was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Haskell"
+component = "Cabal"
+outcome = "not found"
+detail = "cabal was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Haskell"
+component = "Stack"
+outcome = "identified"
+version = "3.11.1"
+path = "C:\\Users\\Admin\\AppData\\Roaming\\local\\bin\\stack.exe"
+
+[[toolchain]]
+language = "Kotlin"
+component = "kotlinc"
+outcome = "not found"
+detail = "kotlinc was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Lua"
+component = "Lua"
+outcome = "not found"
+detail = "lua was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "OCaml"
+component = "OCaml"
+outcome = "not found"
+detail = "ocaml was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "OCaml"
+component = "opam"
+outcome = "not found"
+detail = "opam was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "OCaml"
+component = "Dune"
+outcome = "not found"
+detail = "dune was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Octave"
+component = "GNU Octave"
+outcome = "not found"
+detail = "octave-cli was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Perl"
+component = "Perl"
+outcome = "not found"
+detail = "perl was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "PHP"
+component = "PHP"
+outcome = "identified"
+version = "8.5.9"
+path = "C:\\Users\\Admin\\tools\\php-8.5.9\\php.exe"
+
+[[toolchain]]
+language = "PowerShell"
+component = "PowerShell (pwsh)"
+outcome = "not found"
+detail = "pwsh was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "PowerShell"
+component = "Windows PowerShell"
+outcome = "identified"
+version = "5.1.22621"
+path = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[[toolchain]]
+language = "Prolog"
+component = "SWI-Prolog"
+outcome = "not found"
+detail = "swipl was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "R"
+component = "R"
+outcome = "identified"
+version = "4.6.1"
+path = "C:\\Users\\Admin\\AppData\\Local\\Programs\\R\\R-4.6.1\\bin\\x64\\R.exe"
+
+[[toolchain]]
+language = "Ruby"
+component = "Ruby"
+outcome = "identified"
+version = "4.0.6"
+path = "C:\\Ruby40-x64\\bin\\ruby.exe"
+
+[[toolchain]]
+language = "Ruby"
+component = "Bundler"
+outcome = "unidentified"
+detail = "4.0.16"
+
+[[toolchain]]
+language = "Scala"
+component = "Scala"
+outcome = "unidentified"
+detail = "Scala code runner version: 1.14.0"
+
+[[toolchain]]
+language = "Scala"
+component = "sbt"
+outcome = "not found"
+detail = "sbt was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Scheme"
+component = "GNU Guile"
+outcome = "not found"
+detail = "guile was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Scheme"
+component = "Chez Scheme"
+outcome = "not found"
+detail = "chez was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Solidity"
+component = "solc"
+outcome = "not found"
+detail = "solc was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Swift"
+component = "Swift"
+outcome = "not found"
+detail = "swift was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Tcl"
+component = "tclsh"
+outcome = "not found"
+detail = "tclsh was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Zig"
+component = "Zig"
+outcome = "identified"
+version = "0.16.0"
+path = "C:\\Users\\Admin\\zig\\zig.exe"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "SQLite"
+outcome = "identified"
+version = "3.53.4"
+path = "C:\\Users\\Admin\\tools\\sqlite-3.53.4\\sqlite3.exe"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "PostgreSQL (psql)"
+outcome = "identified"
+version = "18.4"
+path = "C:\\Program Files\\PostgreSQL\\18\\bin\\psql.exe"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "MySQL client"
+outcome = "identified"
+version = "8.0"
+path = "C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysql.exe"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "MariaDB client"
+outcome = "not found"
+detail = "mariadb was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "SQL Server (sqlcmd)"
+outcome = "identified"
+version = "15.0.2000"
+path = "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\SQLCMD.EXE"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "Oracle (SQL*Plus)"
+outcome = "identified"
+version = "21.0.0"
+path = "C:\\app\\Admin\\product\\21c\\dbhomeXE\\bin\\sqlplus.exe"
+
+[[toolchain]]
+language = "Databases (RDBMS)"
+component = "Firebird (isql)"
+outcome = "not found"
+detail = "isql was not found on PATH, or in this kit's install locations"
+
+[[toolchain]]
+language = "Version control"
+component = "Git"
+outcome = "identified"
+version = "2.46.0"
+path = "C:\\Program Files\\Git\\cmd\\git.exe"
+

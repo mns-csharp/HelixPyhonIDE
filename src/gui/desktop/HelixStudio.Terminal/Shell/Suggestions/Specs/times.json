@@ -1,0 +1,5 @@
+{
+  "name": "times",
+  "synopsis": "times",
+  "description": "Show accumulated process CPU time"
+}

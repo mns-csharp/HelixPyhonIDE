@@ -1,0 +1,11 @@
+{
+  "name": "more",
+  "aliases": ["less"],
+  "synopsis": "more [file ...]",
+  "description": "Display file contents a page at a time",
+  "options": [
+    { "names": ["-n", "-b"], "description": "Number output lines" },
+    { "names": ["-E", "-A"], "description": "Show a $ at the end of each line" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

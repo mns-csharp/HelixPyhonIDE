@@ -1,0 +1,7 @@
+{
+  "name": "exit",
+  "aliases": ["logout"],
+  "synopsis": "exit [n]",
+  "description": "Exit the shell, optionally with a status code",
+  "args": [ { "kind": "text" } ]
+}

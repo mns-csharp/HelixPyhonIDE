@@ -1,0 +1,6 @@
+<Project>
+  <Import Project="..\..\Directory.Build.props" />
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)..\TestCategories\IntegrationCategory.cs" Link="TestCategory.cs" />
+  </ItemGroup>
+</Project>

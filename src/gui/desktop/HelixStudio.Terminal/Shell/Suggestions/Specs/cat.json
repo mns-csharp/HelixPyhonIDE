@@ -1,0 +1,10 @@
+{
+  "name": "cat",
+  "synopsis": "cat [-n] [-E] [file ...]",
+  "description": "Print files to the screen",
+  "options": [
+    { "names": ["-n", "-b"], "description": "Number output lines" },
+    { "names": ["-E", "-A"], "description": "Show a $ at the end of each line" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

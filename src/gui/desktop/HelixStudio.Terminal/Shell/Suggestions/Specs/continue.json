@@ -1,0 +1,6 @@
+{
+  "name": "continue",
+  "synopsis": "continue [n]",
+  "description": "Resume the next iteration of a for, while or until loop",
+  "args": [ { "kind": "text" } ]
+}

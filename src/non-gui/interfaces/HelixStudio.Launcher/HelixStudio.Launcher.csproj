@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- A CONSOLE-subsystem exe on purpose. HelixPython.exe is WinExe, so running it with flags from
+         cmd would return the prompt before the program printed a line and interleave its output with
+         the next prompt: the same reason Visual Studio ships devenv.com beside devenv.exe. This is
+         that .com — the IDE's run path without the IDE. -->
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Launcher</RootNamespace>
+    <AssemblyName>helixstudio</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The run planner and the structure gate: the same two types MainForm delegates to, so the
+         command line and the IDE cannot disagree about whether a solution may run. -->
+    <ProjectReference Include="..\..\workspace\HelixStudio.Workspace\HelixStudio.Workspace.csproj" />
+    <ProjectReference Include="..\..\language\HelixStudio.VirtualCompiler\HelixStudio.VirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <!-- PythonInterpreterManager — the same discovery the IDE's Run button uses. -->
+    <ProjectReference Include="..\..\execution\HelixStudio.Debugger\HelixStudio.Debugger.csproj" />
+    <!-- The engines behind the lint, code-review, profile and run-test verbs. Each is the SAME
+         engine its Analysis/Profiler/Tests menu item drives; only the rendering differs. -->
+    <ProjectReference Include="..\..\analysis\HelixStudio.Lint\HelixStudio.Lint.csproj" />
+    <ProjectReference Include="..\..\analysis\HelixStudio.CodeReview\HelixStudio.CodeReview.csproj" />
+    <ProjectReference Include="..\..\execution\HelixStudio.Profiler\HelixStudio.Profiler.csproj" />
+    <ProjectReference Include="..\..\execution\HelixStudio.Testing\HelixStudio.Testing.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+{
+  "name": "df",
+  "synopsis": "df [-h]",
+  "description": "Show free disk space on every drive",
+  "options": [
+    { "names": ["-h"], "description": "Sizes in K, M, G" }
+  ]
+}

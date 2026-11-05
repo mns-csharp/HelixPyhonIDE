@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net472</TargetFramework><RootNamespace>HelixPythonNamespace.Tests</RootNamespace><LangVersion>7.3</LangVersion><ImplicitUsings>disable</ImplicitUsings><Nullable>disable</Nullable><GenerateAssemblyInfo>false</GenerateAssemblyInfo></PropertyGroup>
+  <ItemGroup><ProjectReference Include="$(RepositoryRoot)src\non-gui\foundation\HelixStudio.Core\HelixStudio.Core.csproj" /><ProjectReference Include="$(RepositoryRoot)src\non-gui\analysis\HelixStudio.Analysis\HelixStudio.Analysis.csproj" /></ItemGroup>
+  <ItemGroup><PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" /><PackageReference Include="MSTest.TestAdapter" Version="3.1.1" /><PackageReference Include="MSTest.TestFramework" Version="3.1.1" /></ItemGroup>
+</Project>

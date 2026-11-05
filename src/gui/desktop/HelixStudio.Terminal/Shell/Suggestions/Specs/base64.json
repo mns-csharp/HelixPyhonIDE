@@ -1,0 +1,9 @@
+{
+  "name": "base64",
+  "synopsis": "base64 [-d] [file]",
+  "description": "Encode or decode data in base64",
+  "options": [
+    { "names": ["-d", "--decode"], "description": "Decode the input instead of encoding it" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

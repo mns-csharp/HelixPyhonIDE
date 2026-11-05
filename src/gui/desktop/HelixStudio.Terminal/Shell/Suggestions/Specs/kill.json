@@ -1,0 +1,9 @@
+{
+  "name": "kill",
+  "synopsis": "kill [-signal] pid | %job",
+  "description": "End a process or job",
+  "options": [
+    { "names": ["-l", "--list"], "description": "List signal names" }
+  ],
+  "args": [ { "kind": "job", "many": true } ]
+}

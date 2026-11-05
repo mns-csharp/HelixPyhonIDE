@@ -1,0 +1,9 @@
+{
+  "name": "stat",
+  "synopsis": "stat [-c format] path ...",
+  "description": "Show detailed information about a file",
+  "options": [
+    { "names": ["-c"], "description": "Print using this format string instead", "value": "text" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

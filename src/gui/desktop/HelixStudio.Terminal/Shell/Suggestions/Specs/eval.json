@@ -1,0 +1,6 @@
+{
+  "name": "eval",
+  "synopsis": "eval [args ...]",
+  "description": "Build a command by joining the arguments and run it",
+  "args": [ { "kind": "text", "many": true } ]
+}

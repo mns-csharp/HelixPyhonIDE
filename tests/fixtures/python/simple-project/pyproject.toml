@@ -1,0 +1,10 @@
+[project]
+name = "pythonsimple"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.helixstudio]
+interface-style = "protocol"
+kind = "gui"
+gui-framework = "tkinter"

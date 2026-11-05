@@ -1,0 +1,6 @@
+{
+  "name": "chmod",
+  "synopsis": "chmod mode path ...",
+  "description": "Change a file's writable attribute",
+  "args": [ { "kind": "text" }, { "kind": "path", "many": true } ]
+}

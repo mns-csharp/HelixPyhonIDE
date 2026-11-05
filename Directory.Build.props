@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <RepositoryRoot>$([MSBuild]::EnsureTrailingSlash('$(MSBuildThisFileDirectory)'))</RepositoryRoot>
+    <BaseOutputPath>$(RepositoryRoot)artifacts\bin\$(MSBuildProjectName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(RepositoryRoot)artifacts\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <!-- Every test run uses HelixStudio.runsettings, which forces an isolated test host. Without
+         it the WinForms suites silently truncate the run and still report success — see the
+         comment in that file. -->
+    <RunSettingsFilePath>$(RepositoryRoot)HelixStudio.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+</Project>

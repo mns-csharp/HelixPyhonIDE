@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Linker</RootNamespace>
+    <AssemblyName>HelixStudio.Linker</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelixStudio.Catalog\HelixStudio.Catalog.csproj" />
+    <ProjectReference Include="..\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <ProjectReference Include="..\HelixStudio.VirtualCompiler\HelixStudio.VirtualCompiler.csproj" />
+  </ItemGroup>
+</Project>

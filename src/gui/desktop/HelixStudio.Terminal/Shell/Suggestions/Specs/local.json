@@ -1,0 +1,6 @@
+{
+  "name": "local",
+  "synopsis": "local name[=value] ...",
+  "description": "Declare a variable local to the current function",
+  "args": [ { "kind": "variable", "many": true } ]
+}

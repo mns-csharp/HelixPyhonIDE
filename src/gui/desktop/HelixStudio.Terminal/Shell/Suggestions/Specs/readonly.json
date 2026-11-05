@@ -1,0 +1,6 @@
+{
+  "name": "readonly",
+  "synopsis": "readonly [name[=value] ...]",
+  "description": "Mark variables as read-only",
+  "args": [ { "kind": "variable", "many": true } ]
+}

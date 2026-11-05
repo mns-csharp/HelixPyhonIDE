@@ -1,0 +1,6 @@
+{
+  "name": "shift",
+  "synopsis": "shift [n]",
+  "description": "Shift the positional parameters left by a number of places",
+  "args": [ { "kind": "text" } ]
+}

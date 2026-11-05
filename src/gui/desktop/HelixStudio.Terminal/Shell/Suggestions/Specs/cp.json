@@ -1,0 +1,12 @@
+{
+  "name": "cp",
+  "synopsis": "cp [-rpvn] source ... target",
+  "description": "Copy files and directories",
+  "options": [
+    { "names": ["-r", "-R"], "description": "Copy directories recursively" },
+    { "names": ["-n"], "description": "Skip files that already exist at the destination" },
+    { "names": ["-p"], "description": "Preserve the modification time" },
+    { "names": ["-v"], "description": "Print each file as it is copied" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

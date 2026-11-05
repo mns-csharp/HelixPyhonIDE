@@ -1,0 +1,10 @@
+[project]
+name = "lib_utils"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Helpers: geometry, logging, decorators, iterators, async ops."
+dependencies = ["lib_core"]
+
+[tool.helixstudio]
+interface-style = "protocol"
+kind = "library"

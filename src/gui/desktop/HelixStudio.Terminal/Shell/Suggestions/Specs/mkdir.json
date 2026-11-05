@@ -1,0 +1,10 @@
+{
+  "name": "mkdir",
+  "synopsis": "mkdir [-pv] dir ...",
+  "description": "Create directories",
+  "options": [
+    { "names": ["-p"], "description": "Create parent directories as needed, and don't complain if it exists" },
+    { "names": ["-v"], "description": "Print a message for each directory created" }
+  ],
+  "args": [ { "kind": "folder", "many": true } ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "return",
+  "synopsis": "return [n]",
+  "description": "Return from a function or sourced script, optionally with a status code",
+  "args": [ { "kind": "text" } ]
+}

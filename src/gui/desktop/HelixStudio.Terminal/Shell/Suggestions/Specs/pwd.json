@@ -1,0 +1,8 @@
+{
+  "name": "pwd",
+  "synopsis": "pwd [-P]",
+  "description": "Print the working directory",
+  "options": [
+    { "names": ["-W"], "description": "Print the path in Windows form, with backslashes, instead of forward slashes" }
+  ]
+}

@@ -1,0 +1,9 @@
+[project]
+name = "lib_core"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Core domain types: shapes, animals, storage, events, models, errors."
+dependencies = []
+
+[tool.helixstudio]
+interface-style = "protocol"

@@ -1,0 +1,9 @@
+{
+  "name": "readlink",
+  "synopsis": "readlink [-f] path ...",
+  "description": "Print the target of a symbolic link",
+  "options": [
+    { "names": ["-f"], "description": "Print the path even when it is not a link" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

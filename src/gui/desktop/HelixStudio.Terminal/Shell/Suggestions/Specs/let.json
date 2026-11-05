@@ -1,0 +1,6 @@
+{
+  "name": "let",
+  "synopsis": "let expression [expression ...]",
+  "description": "Evaluate arithmetic expressions",
+  "args": [ { "kind": "text", "many": true } ]
+}

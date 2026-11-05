@@ -1,0 +1,7 @@
+{
+  "name": "[",
+  "aliases": ["test"],
+  "synopsis": "[ expression ]",
+  "description": "Evaluate a conditional expression",
+  "args": [ { "kind": "text", "many": true } ]
+}

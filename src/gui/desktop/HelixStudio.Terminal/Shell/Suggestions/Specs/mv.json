@@ -1,0 +1,11 @@
+{
+  "name": "mv",
+  "synopsis": "mv [-fvn] source ... target",
+  "description": "Move or rename files and directories",
+  "options": [
+    { "names": ["-f"], "description": "Overwrite an existing destination directory" },
+    { "names": ["-n"], "description": "Skip if the destination already exists" },
+    { "names": ["-v"], "description": "Print each file as it is moved" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

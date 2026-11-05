@@ -1,0 +1,6 @@
+{
+  "name": "pushd",
+  "synopsis": "pushd [dir]",
+  "description": "Push a directory onto the stack and switch to it",
+  "args": [ { "kind": "folder" } ]
+}

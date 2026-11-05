@@ -1,0 +1,9 @@
+{
+  "name": "getopts",
+  "synopsis": "getopts optstring name [args]",
+  "description": "Parse positional options one at a time",
+  "args": [
+    { "kind": "text" },
+    { "kind": "variable" }
+  ]
+}

@@ -1,0 +1,13 @@
+[project]
+name = "app_server"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Async route+middleware demo that exercises the same APIs from the server angle."
+dependencies = ["lib_core", "lib_utils"]
+
+[project.scripts]
+app-server = "app_server.main:main"
+
+[tool.helixstudio]
+interface-style = "protocol"
+kind = "app"

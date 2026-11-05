@@ -1,0 +1,32 @@
+{
+  "name": "shopt",
+  "synopsis": "shopt [-su] [optname ...]",
+  "description": "Show or set shell behavior options",
+  "options": [
+    { "names": ["-s"], "description": "Turn the named options on" },
+    { "names": ["-u"], "description": "Turn the named options off" }
+  ],
+  "args": [
+    {
+      "kind": "choice",
+      "many": true,
+      "choices": [
+        { "name": "errexit", "description": "Exit immediately if a command fails" },
+        { "name": "nounset", "description": "Treat unset variables as an error" },
+        { "name": "xtrace", "description": "Print each command before running it" },
+        { "name": "noglob", "description": "Disable filename globbing" },
+        { "name": "verbose", "description": "Print each line of input as it is read" },
+        { "name": "noclobber", "description": "Refuse to overwrite existing files with >" },
+        { "name": "pipefail", "description": "Use the last non-zero exit status in a pipeline" },
+        { "name": "allexport", "description": "Export every variable that is set from now on" },
+        { "name": "noexec", "description": "Read commands without running them" },
+        { "name": "vi", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "emacs", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "posix", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "monitor", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "histexpand", "description": "Accepted for compatibility; has no effect here" },
+        { "name": "history", "description": "Accepted for compatibility; has no effect here" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cut",
+  "synopsis": "cut -f list [-d sep] | -c list [file ...]",
+  "description": "Print selected fields or characters of each line",
+  "options": [
+    { "names": ["-d"], "description": "Use this character to separate fields instead of tab", "value": "text" },
+    { "names": ["-f"], "description": "Fields to keep, e.g. 1,3-5", "value": "text" },
+    { "names": ["-c"], "description": "Characters to keep, e.g. 1,3-5", "value": "text" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

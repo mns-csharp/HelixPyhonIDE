@@ -1,0 +1,10 @@
+{
+  "name": "ln",
+  "synopsis": "ln [-sf] target link",
+  "description": "Create a link to a file",
+  "options": [
+    { "names": ["-s"], "description": "Create a symbolic link instead of copying" },
+    { "names": ["-f"], "description": "Overwrite the link if it already exists" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

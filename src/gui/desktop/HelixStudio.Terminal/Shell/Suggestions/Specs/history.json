@@ -1,0 +1,9 @@
+{
+  "name": "history",
+  "synopsis": "history [-c] [n]",
+  "description": "Show or clear the command history",
+  "options": [
+    { "names": ["-c"], "description": "Clear the history" }
+  ],
+  "args": [ { "kind": "text" } ]
+}

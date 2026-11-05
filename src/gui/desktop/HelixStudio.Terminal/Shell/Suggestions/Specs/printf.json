@@ -1,0 +1,9 @@
+{
+  "name": "printf",
+  "synopsis": "printf format [args...]",
+  "description": "Format and print arguments using a printf-style format string",
+  "args": [
+    { "kind": "text" },
+    { "kind": "text", "many": true }
+  ]
+}

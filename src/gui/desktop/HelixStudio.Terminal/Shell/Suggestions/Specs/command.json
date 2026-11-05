@@ -1,0 +1,10 @@
+{
+  "name": "command",
+  "synopsis": "command [-v] name [args]",
+  "description": "Run a command, bypassing any function or alias with the same name",
+  "options": [
+    { "names": ["-v"], "description": "Print a description of how the name would be run, like type" },
+    { "names": ["-V"], "description": "Print a more verbose description of how the name would be run" }
+  ],
+  "args": [ { "kind": "command" } ]
+}

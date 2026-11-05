@@ -1,0 +1,8 @@
+{
+  "name": "mktemp",
+  "synopsis": "mktemp [-d]",
+  "description": "Create a temporary file or directory and print its path",
+  "options": [
+    { "names": ["-d"], "description": "Create a directory instead of a file" }
+  ]
+}

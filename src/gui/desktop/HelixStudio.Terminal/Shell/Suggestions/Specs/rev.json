@@ -1,0 +1,6 @@
+{
+  "name": "rev",
+  "synopsis": "rev [file ...]",
+  "description": "Reverse the characters of each line",
+  "args": [ { "kind": "file", "many": true } ]
+}

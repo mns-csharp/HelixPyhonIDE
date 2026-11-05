@@ -1,0 +1,6 @@
+{
+  "name": "diff",
+  "synopsis": "diff file1 file2",
+  "description": "Compare two files line by line",
+  "args": [ { "kind": "file", "many": true } ]
+}

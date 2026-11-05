@@ -1,0 +1,6 @@
+{
+  "name": "help",
+  "synopsis": "help [pattern]",
+  "description": "List builtins and their usage, optionally filtered by a pattern",
+  "args": [ { "kind": "command" } ]
+}

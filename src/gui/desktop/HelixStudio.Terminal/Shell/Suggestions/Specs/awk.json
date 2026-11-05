@@ -1,0 +1,9 @@
+{
+  "name": "awk",
+  "synopsis": "awk [-F sep] program [file ...]",
+  "description": "Run a small text-processing program over each line of a file",
+  "options": [
+    { "names": ["-F"], "description": "Use this character to split fields instead of whitespace", "value": "text" }
+  ],
+  "args": [ { "kind": "text" }, { "kind": "file", "many": true } ]
+}

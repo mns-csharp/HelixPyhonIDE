@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The GUI Designer Canvas as an add-in (spec 004, Task B). The IDE finds it in
+       addins\GuiDesigner\ beside HelixPython.exe; the post-build target below puts it there. -->
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.AddIns.GuiDesigner</RootNamespace>
+    <AssemblyName>HelixStudio.AddIns.GuiDesigner</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <Product>HelixPython</Product>
+    <Description>GUI Designer Canvas: design Tkinter, PyQt6, PySide6, wxPython or C++ Win32 forms visually and keep their source in sync.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="HelixStudio.App.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The toolbox icons load from disk without locking the files (shared source, internal type). -->
+    <Compile Include="$(RepositoryRoot)src\gui\shared\ToolbarIconDiskLoader.cs">
+      <Link>Shared\ToolbarIconDiskLoader.cs</Link>
+    </Compile>
+    <ProjectReference Include="..\HelixStudio.AddIns\HelixStudio.AddIns.csproj" />
+    <ProjectReference Include="..\..\diagramming\HelixStudio.UI\HelixStudio.UI.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\code-generation\HelixStudio.GuiDesigner\HelixStudio.GuiDesigner.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The designer window's own icon (GuiDesignerForm.DesignerIcon reads it by its file-name suffix). -->
+    <EmbeddedResource Include="$(RepositoryRoot)assets\product\app\gui_designer.ico">
+      <LogicalName>HelixStudio.AddIns.GuiDesigner.gui_designer.ico</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- Deploy: everything in the output folder (the add-in, the GUI Designer engine and what it
+       needs, their pdbs) goes to the IDE's bundled add-in root. Copy creates the folder, so this
+       works whichever of App and this project builds first. -->
+  <Target Name="DeployGuiDesignerAddIn" AfterTargets="Build">
+    <ItemGroup>
+      <GuiDesignerAddInFile Include="$(TargetDir)**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(GuiDesignerAddInFile)"
+          DestinationFiles="@(GuiDesignerAddInFile->'$(RepositoryRoot)artifacts\bin\HelixStudio.App\$(Configuration)\net472\addins\GuiDesigner\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+</Project>

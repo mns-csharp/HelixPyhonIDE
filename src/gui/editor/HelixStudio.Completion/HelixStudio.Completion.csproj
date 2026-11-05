@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.Editor</RootNamespace>
+    <AssemblyName>HelixStudio.Completion</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Completion\NoActivateForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="Completion\NoActivateForm.Designer.cs"><DependentUpon>NoActivateForm.cs</DependentUpon></Compile>
+    <EmbeddedResource Update="Completion\NoActivateForm.resx"><DependentUpon>NoActivateForm.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <ProjectReference Include="..\..\..\non-gui\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.CudaVirtualCompiler\HelixStudio.CudaVirtualCompiler.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\workspace\HelixStudio.Workspace\HelixStudio.Workspace.csproj" />
+    <ProjectReference Include="..\..\..\non-gui\language\HelixStudio.Catalog\HelixStudio.Catalog.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelixStudio.UI.HelixTextEditorNET\HelixStudio.UI.HelixTextEditorNET.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Ships with the app (CopyToOutputDirectory flows to any project referencing this one, e.g.
+         HelixStudio.App) so CatalogScanner can find it at runtime via AppDomain.BaseDirectory without
+         depending on the dev source tree layout. -->
+    <None Include="..\..\..\..\tools\catalog\introspect.py" Link="catalog\introspect.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

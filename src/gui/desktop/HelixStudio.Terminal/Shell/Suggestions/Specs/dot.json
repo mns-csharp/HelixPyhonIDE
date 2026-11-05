@@ -1,0 +1,7 @@
+{
+  "name": ".",
+  "aliases": ["source"],
+  "synopsis": ". filename [args]",
+  "description": "Run a script in the current shell",
+  "args": [ { "kind": "file" } ]
+}

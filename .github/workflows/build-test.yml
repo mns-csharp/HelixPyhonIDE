@@ -1,0 +1,50 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Locate Visual Studio tools
+        shell: pwsh
+        run: |
+          $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
+          $install = & $vswhere -latest -products '*' -requires Microsoft.Component.MSBuild -property installationPath
+          if (-not $install) { throw 'Visual Studio MSBuild was not found.' }
+          "MSBUILD=$install\MSBuild\Current\Bin\MSBuild.exe" >> $env:GITHUB_ENV
+          "VSTEST=$install\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" >> $env:GITHUB_ENV
+
+      - name: Restore
+        shell: pwsh
+        run: '& $env:MSBUILD HelixPython.sln -t:Restore -p:Configuration=Debug -m:1 -nodereuse:false'
+
+      - name: Build
+        shell: pwsh
+        run: '& $env:MSBUILD HelixPython.sln -t:Build -p:Configuration=Debug -m:1 -nodereuse:false'
+
+      - name: Build Release
+        shell: pwsh
+        run: '& $env:MSBUILD HelixPython.sln -t:Build -p:Configuration=Release -m:1 -nodereuse:false'
+
+      - name: Test
+        shell: pwsh
+        run: |
+          $env:HELIXSTUDIO_STATE_DIR = Join-Path $env:RUNNER_TEMP 'helixpython-test-state'
+          $assemblies = Get-ChildItem 'artifacts\bin' -Recurse -Filter '*.dll' |
+            Where-Object { $_.Name -match '\.(Tests|IntegrationTests)\.dll$' } |
+            Where-Object { $_.FullName -match '\\Debug\\' } |
+            Where-Object { $_.FullName -notmatch '\\ref\\' } |
+            ForEach-Object { $_.FullName }
+          if (-not $assemblies) { throw 'No test assemblies were built.' }
+          & $env:VSTEST @assemblies /Settings:HelixStudio.runsettings
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

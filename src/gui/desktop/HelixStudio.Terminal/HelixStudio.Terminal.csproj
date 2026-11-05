@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>HelixPythonNamespace.Terminal</RootNamespace>
+    <AssemblyName>HelixPython.Terminal</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shell\Suggestions\Specs\*.json" LogicalName="Specs/%(Filename)%(Extension)" />
+    <!-- STT was copied from a multi-project tree; ignore its former nested build output. -->
+    <Compile Remove="**\bin\**\*.cs;**\obj\**\*.cs" />
+    <EmbeddedResource Remove="**\bin\**\*;**\obj\**\*" />
+    <Content Remove="**\bin\**\*;**\obj\**\*" />
+  </ItemGroup>
+</Project>

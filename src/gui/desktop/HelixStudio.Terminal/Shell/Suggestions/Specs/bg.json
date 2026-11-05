@@ -1,0 +1,6 @@
+{
+  "name": "bg",
+  "synopsis": "bg [%n]",
+  "description": "Continue a job in the background",
+  "args": [ { "kind": "job", "many": true } ]
+}

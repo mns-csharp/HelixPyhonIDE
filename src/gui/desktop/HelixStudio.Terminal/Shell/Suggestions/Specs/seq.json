@@ -1,0 +1,9 @@
+{
+  "name": "seq",
+  "synopsis": "seq [first [step]] last",
+  "description": "Print a sequence of numbers",
+  "options": [
+    { "names": ["-s"], "description": "Use this string to separate values instead of a newline", "value": "text" }
+  ],
+  "args": [ { "kind": "text", "many": true } ]
+}

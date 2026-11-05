@@ -1,0 +1,9 @@
+{
+  "name": "export",
+  "synopsis": "export [-n] [name[=value] ...]",
+  "description": "Mark variables for export to child processes, or list exported variables",
+  "options": [
+    { "names": ["-n"], "description": "Remove the export attribute instead of setting it" }
+  ],
+  "args": [ { "kind": "variable", "many": true } ]
+}

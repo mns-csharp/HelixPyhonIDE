@@ -1,0 +1,21 @@
+{
+  "name": "ls",
+  "aliases": ["dir"],
+  "description": "List directory contents",
+  "options": [
+    { "names": ["-l"], "description": "Long listing: size, date and name" },
+    { "names": ["-a"], "description": "Show hidden entries" },
+    { "names": ["-A"], "description": "Show hidden entries" },
+    { "names": ["-h"], "description": "Sizes in K, M, G with -l" },
+    { "names": ["-r"], "description": "Reverse the order" },
+    { "names": ["-t"], "description": "Sort by modification time, newest first" },
+    { "names": ["-S"], "description": "Sort by size, largest first" },
+    { "names": ["-R"], "description": "List subfolders recursively" },
+    { "names": ["-1"], "description": "One entry per line" },
+    { "names": ["-d"], "description": "List folders themselves, not their contents" },
+    { "names": ["-F"], "description": "Mark folders with / and programs with *" },
+    { "names": ["-p"], "description": "Mark folders with /" },
+    { "names": ["--no-color"], "description": "No colours" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

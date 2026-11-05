@@ -1,0 +1,9 @@
+{
+  "name": "unalias",
+  "synopsis": "unalias [-a] name ...",
+  "description": "Remove aliases",
+  "options": [
+    { "names": ["-a"], "description": "Remove all aliases" }
+  ],
+  "args": [ { "kind": "text", "many": true } ]
+}

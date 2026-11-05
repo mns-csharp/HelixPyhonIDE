@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.18)
+project(new_project_creation_testing41 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_library(new_project_creation_testing41 STATIC lib.cpp lib.h)
+target_include_directories(new_project_creation_testing41 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

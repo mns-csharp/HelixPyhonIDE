@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use HelixPython in research, please cite the version you used."
+title: "HelixPython: a visual-first Python IDE"
+authors:
+  - name: "HelixPython contributors"
+license: MIT
+type: software

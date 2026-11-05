@@ -1,0 +1,6 @@
+{
+  "name": "dirname",
+  "synopsis": "dirname path ...",
+  "description": "Strip the last component from a path, leaving its directory",
+  "args": [ { "kind": "path", "many": true } ]
+}

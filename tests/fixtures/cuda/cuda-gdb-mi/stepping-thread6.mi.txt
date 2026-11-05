@@ -1,0 +1,98 @@
+=thread-group-added,id="i1"
+~"NVIDIA (R) cuda-gdb 13.4\n"
+~"Portions Copyright (C) 2007-2026 NVIDIA Corporation\n"
+~"Based on GNU gdb 16.3\n"
+~"Copyright (C) 2024 Free Software Foundation, Inc.\n"
+~"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law."
+~"\nType \""
+~"show copying\" and \"show warranty\" for details.\n"
+~"This CUDA-GDB was configured as \"x86_64-pc-linux-gnu\".\n"
+~"Type \"show configuration\" for configuration details.\n"
+~"For bug reporting instructions, please see:\n"
+~"<https://forums.developer.nvidia.com/c/developer-tools/cuda-developer-tools/cuda-gdb>.\n"
+~"Find the CUDA-GDB manual and other documentation resources online at:\n    <"
+~"https://docs.nvidia.com/cuda/cuda-gdb/index.html>.\n\n"
+~"For help, type \"help\".\n"
+~"Type \"apropos word\" to search for commands related to \"word\"...\n"
+~"Reading symbols from ./saxpy...\n"
+(gdb) 
+^done
+(gdb) 
+^done,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="<MULTIPLE>",times="0",original-location="saxpy.cu:8"},{number="1.1",enabled="n",addr="0x000000000000af2d",func="scale(int*, int, int)",file="/home/dmin/helixcuda/saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="11",thread-groups=["i1"]}
+(gdb) 
+=thread-group-started,id="i1",pid="5318"
+=thread-created,id="1",group-id="i1"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="<MULTIPLE>",times="0",original-location="saxpy.cu:8"},{number="1.1",enabled="n",addr="0x000055555555ef2d",func="scale(int*, int, int)",file="/home/dmin/helixcuda/saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="11",thread-groups=["i1"]}
+=library-loaded,id="/lib64/ld-linux-x86-64.so.2",target-name="/lib64/ld-linux-x86-64.so.2",host-name="/lib64/ld-linux-x86-64.so.2",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fc6000",to="0x00007ffff7ff0195"}]
+^running
+*running,thread-id="all"
+(gdb) 
+=library-loaded,id="/lib/x86_64-linux-gnu/libc.so.6",target-name="/lib/x86_64-linux-gnu/libc.so.6",host-name="/lib/x86_64-linux-gnu/libc.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7c28800",to="0x00007ffff7dafeb9"}]
+~"[Thread debugging using libthread_db enabled]\n"
+~"Using host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\n"
+=library-loaded,id="/usr/lib/wsl/lib/libcuda.so.1",target-name="/usr/lib/wsl/lib/libcuda.so.1",host-name="/usr/lib/wsl/lib/libcuda.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff780db10",to="0x00007ffff78247d2"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libdl.so.2",target-name="/lib/x86_64-linux-gnu/libdl.so.2",host-name="/lib/x86_64-linux-gnu/libdl.so.2",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fa5040",to="0x00007ffff7fa5105"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libpthread.so.0",target-name="/lib/x86_64-linux-gnu/libpthread.so.0",host-name="/lib/x86_64-linux-gnu/libpthread.so.0",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fa0040",to="0x00007ffff7fa0105"}]
+=library-loaded,id="/usr/lib/wsl/lib/libdxcore.so",target-name="/usr/lib/wsl/lib/libdxcore.so",host-name="/usr/lib/wsl/lib/libdxcore.so",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7f15fa0",to="0x00007ffff7f90e81"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libm.so.6",target-name="/lib/x86_64-linux-gnu/libm.so.6",host-name="/lib/x86_64-linux-gnu/libm.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7b27420",to="0x00007ffff7ba53a6"}]
+=library-loaded,id="/usr/lib/wsl/drivers/nv_dispig.inf_amd64_f4c7a2fd13e0f763/libcuda.so.1.1",target-name="/usr/lib/wsl/drivers/nv_dispig.inf_amd64_f4c7a2fd13e0f763/libcuda.so.1.1",host-name="/usr/lib/wsl/drivers/nv_dispig.inf_amd64_f4c7a2fd13e0f763/libcuda.so.1.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff5d52d40",to="0x00007ffff6cec1ea"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/librt.so.1",target-name="/lib/x86_64-linux-gnu/librt.so.1",host-name="/lib/x86_64-linux-gnu/librt.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7eae080",to="0x00007ffff7eae2b1"}]
+=thread-created,id="2",group-id="i1"
+~"[New Thread 0x7ffff5bff000 (LWP 5323)]\n"
+*running,thread-id="2"
+=library-loaded,id="/usr/lib/wsl/lib/libcudadebugger.so.1",target-name="/usr/lib/wsl/lib/libcudadebugger.so.1",host-name="/usr/lib/wsl/lib/libcudadebugger.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff49115c0",to="0x00007ffff5083f80"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libutil.so.1",target-name="/lib/x86_64-linux-gnu/libutil.so.1",host-name="/lib/x86_64-linux-gnu/libutil.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ea9040",to="0x00007ffff7ea9105"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libgcc_s.so.1",target-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",host-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7e7e780",to="0x00007ffff7ea1745"}]
+=thread-created,id="3",group-id="i1"
+~"[New Thread 0x7ffff4863000 (LWP 5325)]\n"
+*running,thread-id="3"
+~"[Detaching after fork from child process 5326]\n"
+=library-loaded,id="/usr/lib/wsl/drivers/nv_dispig.inf_amd64_f4c7a2fd13e0f763/libnvdxgdmal.so.1",target-name="/usr/lib/wsl/drivers/nv_dispig.inf_amd64_f4c7a2fd13e0f763/libnvdxgdmal.so.1",host-name="/usr/lib/wsl/drivers/nv_dispig.inf_amd64_f4c7a2fd13e0f763/libnvdxgdmal.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007fffefc00960",to="0x00007fffefc0c542"}]
+=thread-created,id="4",group-id="i1"
+~"[New Thread 0x7fffefbff000 (LWP 5335)]\n"
+*running,thread-id="4"
+~"[Thread 0x7fffefbff000 (LWP 5335) exited]\n"
+=thread-exited,id="4",group-id="i1"
+=thread-created,id="5",group-id="i1"
+~"[New Thread 0x7fffefbff000 (LWP 5336)]\n"
+*running,thread-id="5"
+=thread-created,id="6",group-id="i1"
+~"[New Thread 0x7fffe0d8f000 (LWP 5341)]\n"
+*running,thread-id="6"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="<MULTIPLE>",times="0",original-location="saxpy.cu:8"},{number="1.1",enabled="n",addr="0x00000000000001f0",func="scale",file="saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="8",thread-groups=["i1"]}
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="<MULTIPLE>",times="0",original-location="saxpy.cu:8"},{number="1.1",enabled="n",addr="<PENDING>",pending="saxpy.cu:8"}
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000000700e72ff0",func="scale",file="saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="8",thread-groups=["i1"],times="0",original-location="saxpy.cu:8"}
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000000700e72ff0",func="scale",file="saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="8",thread-groups=["i1"],times="1",original-location="saxpy.cu:8"}
+~"\n"
+~"CUDA thread hit Breakpoint 1, scale<<<(1,1,1),(8,1,1)>>> (data=0x70a600000, factor=3, n=8) at saxpy.cu:8\n"
+~"8\t        int value = data[i];\n"
+*stopped,CudaFocus={device="0",sm="0",warp="0",lane="0",kernel="0",grid="1",blockIdx="(0,0,0)",threadIdx="(0,0,0)"},reason="breakpoint-hit",disp="keep",bkptno="1",frame={addr="0x0000000700e72ff0",func="scale",args=[{name="data",value="0x70a600000"},{name="factor",value="3"},{name="n",value="8"}],file="saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="8",arch="m68k"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+~"[Switching focus to CUDA kernel 0, grid 1, block (0,0,0), thread (6,0,0), device 0, sm 0, warp 0, lane 6]\n"
+~"8\t        int value = data[i];\n"
+^done
+(gdb) 
+^done,variables=[{name="value",value="<optimized out>"},{name="i",value="6"},{name="data",arg="1",value="0x70a600000"},{name="factor",arg="1",value="3"},{name="n",arg="1",value="8"}]
+(gdb) 
+^running
+*running,thread-id="all"
+(gdb) 
+*stopped,CudaFocus={device="0",sm="0",warp="0",lane="6",kernel="0",grid="1",blockIdx="(0,0,0)",threadIdx="(6,0,0)"},reason="end-stepping-range",frame={addr="0x0000000700e73110",func="scale",args=[{name="data",value="0x70a600000"},{name="factor",value="3"},{name="n",value="8"}],file="saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="9",arch="m68k"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+^done,variables=[{name="value",value="7"},{name="i",value="6"},{name="data",arg="1",value="0x70a600000"},{name="factor",arg="1",value="3"},{name="n",arg="1",value="8"}]
+(gdb) 
+^running
+*running,thread-id="all"
+(gdb) 
+*stopped,CudaFocus={device="0",sm="0",warp="0",lane="6",kernel="0",grid="1",blockIdx="(0,0,0)",threadIdx="(6,0,0)"},reason="end-stepping-range",frame={addr="0x0000000700e73230",func="scale",args=[{name="data",value="0x70a600000"},{name="factor",value="3"},{name="n",value="8"}],file="saxpy.cu",fullname="/home/dmin/helixcuda/saxpy.cu",line="11",arch="m68k"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+^done,variables=[{name="i",value="6"},{name="data",arg="1",value="0x70a600000"},{name="factor",arg="1",value="3"},{name="n",arg="1",value="8"}]
+(gdb) 
+^exit
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="<PENDING>",pending="saxpy.cu:8",times="1",original-location="saxpy.cu:8"}
+=thread-exited,id="1",group-id="i1"
+=thread-exited,id="2",group-id="i1"
+=thread-exited,id="3",group-id="i1"
+=thread-exited,id="5",group-id="i1"
+=thread-exited,id="6",group-id="i1"
+=thread-group-exited,id="i1"

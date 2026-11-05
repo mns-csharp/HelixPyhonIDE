@@ -1,0 +1,13 @@
+[project]
+name = "app_cli"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Command-line demo that drives the lib_core / lib_utils API end-to-end."
+dependencies = ["lib_core", "lib_utils"]
+
+[project.scripts]
+app-cli = "app_cli.main:main"
+
+[tool.helixstudio]
+interface-style = "protocol"
+kind = "app"

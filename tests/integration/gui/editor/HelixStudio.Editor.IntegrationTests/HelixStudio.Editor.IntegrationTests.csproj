@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net472</TargetFramework><RootNamespace>HelixPythonNamespace.Editor.Tests</RootNamespace><AssemblyName>HelixStudio.Editor.IntegrationTests</AssemblyName><LangVersion>7.3</LangVersion><ImplicitUsings>disable</ImplicitUsings><Nullable>disable</Nullable><GenerateAssemblyInfo>false</GenerateAssemblyInfo><UseWindowsForms>true</UseWindowsForms></PropertyGroup>
+  <ItemGroup><ProjectReference Include="$(RepositoryRoot)src\gui\editor\HelixStudio.Editor\HelixStudio.Editor.csproj" /><ProjectReference Include="$(RepositoryRoot)src\non-gui\language\HelixStudio.Catalog\HelixStudio.Catalog.csproj" /></ItemGroup>
+  <ItemGroup><PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" /><PackageReference Include="MSTest.TestAdapter" Version="3.1.1" /><PackageReference Include="MSTest.TestFramework" Version="3.1.1" /></ItemGroup>
+  <!-- The one way a test shows a window (book Chapter 4, 4.6.5). -->
+  <ItemGroup><Compile Include="$(RepositoryRoot)tests\TestSupport\TestWindow.cs" Link="TestSupport\TestWindow.cs" /></ItemGroup>
+</Project>

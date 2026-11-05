@@ -1,0 +1,6 @@
+{
+  "name": "yes",
+  "synopsis": "yes [string]",
+  "description": "Repeatedly print a string until interrupted",
+  "args": [ { "kind": "text", "many": true } ]
+}

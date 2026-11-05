@@ -1,0 +1,6 @@
+{
+  "name": "builtin",
+  "synopsis": "builtin name [args]",
+  "description": "Run a shell builtin directly, bypassing any function of the same name",
+  "args": [ { "kind": "command" } ]
+}

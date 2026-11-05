@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\language\HelixStudio.CppAsmCompiler\HelixStudio.CppAsmCompiler.csproj" />
+    <!-- The Python -> ASM half of the Python -> ASM -> C++ pipeline. -->
+    <ProjectReference Include="..\..\..\..\..\src\non-gui\language\HelixStudio.PythonAsmCompiler\HelixStudio.PythonAsmCompiler.csproj" />
+  </ItemGroup>
+</Project>

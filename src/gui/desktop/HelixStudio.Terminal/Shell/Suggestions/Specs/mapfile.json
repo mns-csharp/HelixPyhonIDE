@@ -1,0 +1,10 @@
+{
+  "name": "mapfile",
+  "aliases": ["readarray"],
+  "synopsis": "mapfile [-t] array",
+  "description": "Read lines from standard input into an array",
+  "options": [
+    { "names": ["-t"], "description": "Strip the trailing newline from each line" }
+  ],
+  "args": [ { "kind": "variable" } ]
+}

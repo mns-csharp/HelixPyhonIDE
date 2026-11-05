@@ -1,0 +1,24 @@
+{
+  "name": "grep",
+  "aliases": ["egrep", "fgrep"],
+  "synopsis": "grep [-invcloqrwxFH] pattern [file ...]",
+  "description": "Search files for lines matching a pattern",
+  "options": [
+    { "names": ["-e"], "description": "Supply the pattern as an option instead of the first operand", "value": "text" },
+    { "names": ["-F"], "description": "Treat the pattern as a literal string, not a regular expression" },
+    { "names": ["-i"], "description": "Ignore case" },
+    { "names": ["-v"], "description": "Print lines that do not match" },
+    { "names": ["-w"], "description": "Match only whole words" },
+    { "names": ["-x"], "description": "Match only whole lines" },
+    { "names": ["-n"], "description": "Show the line number of each match" },
+    { "names": ["-c"], "description": "Show a count of matches instead of the lines" },
+    { "names": ["-l"], "description": "Show only the names of files with a match" },
+    { "names": ["-o"], "description": "Show only the matched part of each line" },
+    { "names": ["-q"], "description": "Print nothing; only report whether something matched" },
+    { "names": ["-r", "-R"], "description": "Search directories recursively" },
+    { "names": ["-H"], "description": "Always show the file name" },
+    { "names": ["-h"], "description": "Never show the file name" },
+    { "names": ["--color", "--colour"], "description": "Highlight the matched text" }
+  ],
+  "args": [ { "kind": "text" }, { "kind": "path", "many": true } ]
+}

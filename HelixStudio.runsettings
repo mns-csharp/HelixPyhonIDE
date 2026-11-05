@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Test-run settings for the whole repository.
+
+  InIsolation is NOT optional here. Most of these suites are WinForms tests that call
+  form.Show() + Application.DoEvents(). Run in-process, those pump vstest.console.exe's OWN
+  STA message loop, which unwinds the platform's run loop mid-test: the run stops silently,
+  and vstest reports "Test Run Successful" with only the tests that had finished by then and
+  exit code 0. Measured on HelixStudio.App.Tests: 44 of 143 tests executed, 99 silently dropped,
+  build reported green. Running in a separate test host process makes the suite honest
+  (143/143 executed).
+
+  Applied automatically via RunSettingsFilePath in Directory.Build.props, so `dotnet test`,
+  Visual Studio's Test Explorer and plain `vstest.console.exe <dll> /Settings:...` all agree.
+-->
+<RunSettings>
+  <RunConfiguration>
+    <InIsolation>true</InIsolation>
+    <TargetFrameworkVersion>net472</TargetFrameworkVersion>
+    <TargetPlatform>x64</TargetPlatform>
+    <!-- Serial: these suites share process-wide UI state (LunaThemes, ToolStripManager.Renderer,
+         the STA thread), so parallel test hosts would make failures order-dependent. -->
+    <MaxCpuCount>1</MaxCpuCount>
+    <!--
+      DO NOT set ExecutionThreadApartmentState=STA here. It looks right — these are WinForms tests,
+      and OLE drag-drop registration (Control.AllowDrop -> RegisterDragDrop) only succeeds on STA,
+      failing on MTA with "DragDrop registration did not succeed".
+
+      But MSTest runs tests on DIFFERENT STA threads, and this suite shares process-wide UI state
+      (see MaxCpuCount above). Controls built on one test's thread then get parented to controls
+      from another, throwing "Controls created on one thread cannot be parented to a control on a
+      different thread" and taking the test host down. It turned passing tests
+      into crashes.
+
+      The drag-drop failure is handled instead by the Application.ThreadException handler in
+      TestAssemblySetup, which swallows and logs it — so no modal crash box appears, drag-drop is
+      simply unavailable in tests, and everything stays on one apartment.
+    -->
+    <!--
+      No test run may ever raise a modal dialog. A MessageBox in a test host has nobody to dismiss
+      it: it blocks the STA thread until something kills the process, and because several IDE paths
+      are `async void` the box can appear AFTER the test that caused it has finished — stranding an
+      error dialog on the developer's desktop. That has happened: a full-suite run appeared to
+      "hang" for 14 minutes and left "Failed to open solution" boxes over a live session.
+
+      Setting it here rather than per-test means a newly written test cannot forget it.
+    -->
+    <EnvironmentVariables>
+      <HELIXSTUDIO_NONINTERACTIVE>1</HELIXSTUDIO_NONINTERACTIVE>
+
+      <!--
+        Isolate the IDE's persisted state. Without this the suite read and WROTE the developer's
+        real %APPDATA%\HelixPython\ — so a run's result depended on how the IDE had last been left,
+        and the run changed it. Measured: user-settings.json carried AiTerminalVisible=false, the
+        AI Terminal therefore started hidden, and all eight AiTerminalPlacementTests failed because
+        Button.PerformClick() is a no-op on a control that is not visible. Nothing about those
+        tests was wrong; the run was reading somebody's window layout.
+
+        UserSettingsManager, RecentFilesManager and BreakpointManager all honour this variable and
+        expand it, which is what lets it be written portably here instead of as one machine's path.
+      -->
+      <HELIXSTUDIO_STATE_DIR>%TEMP%\HelixPython-test-state</HELIXSTUDIO_STATE_DIR>
+
+      <!--
+        Tests run while the developer works on this machine. With this set, the IDE's top-level
+        windows and popups are created invisible (layered, alpha 0), never activated, and a shown
+        LunaForm goes off every screen instead of being clamped onto one. Read once by
+        HelixPythonNamespace.Core.TestEnvironment; nothing else sets it, so users never see it.
+        Book Chapter 4, 4.6.5. Without it a real mouse dragged a CG card during
+        a test, and floating tool windows and editor popups appeared on the desktop.
+      -->
+      <HELIXSTUDIO_TEST_OFFSCREEN>1</HELIXSTUDIO_TEST_OFFSCREEN>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>

@@ -1,0 +1,6 @@
+{
+  "name": "cmd",
+  "synopsis": "cmd [command ...]",
+  "description": "Run a command through cmd.exe",
+  "args": [ { "kind": "command" } ]
+}

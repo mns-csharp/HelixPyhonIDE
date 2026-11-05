@@ -1,0 +1,22 @@
+[project]
+name = "my_unit_test_package"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest-asyncio>=0.23"]
+
+[tool.helixstudio]
+interface-style = "protocol"
+# kind = "test" (ProjectKind.TestProject) — the ONE kind allowed to hold test files (rule 3,
+# PY8003), and the kind that enables rule 2's test-protocol carve-out for the module-level
+# fixtures and test functions in tests/. It was `kind = "library"`, which made all four test
+# files PY8003 errors and every module-level @pytest.fixture in them a PY8002 error, so this
+# solution could not Compile, Run or Debug. A test project is never executable, so it can
+# never be the startup project — app_cli remains that.
+kind = "test"
+references = ["lib_core", "lib_utils"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

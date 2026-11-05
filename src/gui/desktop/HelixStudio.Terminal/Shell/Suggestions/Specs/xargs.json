@@ -1,0 +1,10 @@
+{
+  "name": "xargs",
+  "synopsis": "xargs [-n count] [-I marker] command",
+  "description": "Build and run a command from standard input",
+  "options": [
+    { "names": ["-n"], "description": "Pass at most this many items to each invocation", "value": "text" },
+    { "names": ["-I"], "description": "Replace this marker in the command with each item", "value": "text" }
+  ],
+  "args": [ { "kind": "command" } ]
+}

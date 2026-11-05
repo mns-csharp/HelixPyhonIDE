@@ -1,0 +1,21 @@
+{
+  "name": "trap",
+  "synopsis": "trap [action] [signal ...]",
+  "description": "Run a command when the shell receives a signal",
+  "args": [
+    { "kind": "text" },
+    {
+      "kind": "choice",
+      "many": true,
+      "choices": [
+        { "name": "HUP", "description": "Hangup detected on the controlling terminal" },
+        { "name": "INT", "description": "Interrupt from the keyboard (Ctrl+C)" },
+        { "name": "QUIT", "description": "Quit from the keyboard, with a core dump" },
+        { "name": "KILL", "description": "Immediate, unblockable termination" },
+        { "name": "TERM", "description": "Request to terminate (the default kill signal)" },
+        { "name": "STOP", "description": "Pause the process; cannot be caught" },
+        { "name": "CONT", "description": "Resume a paused process" }
+      ]
+    }
+  ]
+}

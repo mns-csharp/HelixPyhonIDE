@@ -1,0 +1,6 @@
+{
+  "name": "explorer",
+  "synopsis": "explorer [path]",
+  "description": "Open File Explorer at a folder",
+  "args": [ { "kind": "path" } ]
+}

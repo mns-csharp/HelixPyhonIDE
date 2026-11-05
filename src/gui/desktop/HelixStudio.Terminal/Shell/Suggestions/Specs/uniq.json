@@ -1,0 +1,12 @@
+{
+  "name": "uniq",
+  "synopsis": "uniq [-cdui] [file]",
+  "description": "Collapse adjacent matching lines into one",
+  "options": [
+    { "names": ["-i"], "description": "Ignore case when comparing lines" },
+    { "names": ["-d"], "description": "Show only lines that repeat" },
+    { "names": ["-u"], "description": "Show only lines that do not repeat" },
+    { "names": ["-c"], "description": "Prefix each line with the number of times it occurred" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

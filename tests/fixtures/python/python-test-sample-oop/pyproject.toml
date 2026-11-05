@@ -1,0 +1,18 @@
+[project]
+name = "python-test-sample"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Hand-crafted multi-package Python workspace used for manual QA of HelixStudio's IDE features."
+
+[tool.uv.workspace]
+members = [
+    "lib_core",
+    "lib_utils",
+    "app_cli",
+    "app_server",
+    "app_gui",
+    "my_unit_test_package",
+]
+
+[tool.helixstudio]
+interface-style = "protocol"

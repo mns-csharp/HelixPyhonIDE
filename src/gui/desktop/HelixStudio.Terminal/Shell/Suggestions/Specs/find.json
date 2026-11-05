@@ -1,0 +1,25 @@
+{
+  "name": "find",
+  "synopsis": "find [path] [-name pat] [-type f|d] [-maxdepth n] [-exec cmd {} ;]",
+  "description": "Search a directory tree for files matching a condition",
+  "options": [
+    { "names": ["-name"], "description": "Match the file name against this pattern", "value": "text" },
+    { "names": ["-iname"], "description": "Match the file name, ignoring case", "value": "text" },
+    { "names": ["-path", "-wholename"], "description": "Match the whole path against this pattern", "value": "text" },
+    {
+      "names": ["-type"],
+      "description": "Only files (f) or only directories (d)",
+      "value": "choice",
+      "choices": [
+        { "name": "f", "description": "Regular files" },
+        { "name": "d", "description": "Directories" }
+      ]
+    },
+    { "names": ["-maxdepth"], "description": "Descend at most this many levels", "value": "text" },
+    { "names": ["-mindepth"], "description": "Do not report matches above this depth", "value": "text" },
+    { "names": ["-empty"], "description": "Only empty files or directories" },
+    { "names": ["-print", "-print0"], "description": "Print each match (the default)" },
+    { "names": ["-exec"], "description": "Run a command on each match; {} is replaced with the path, terminate with ;", "value": "command" }
+  ],
+  "args": [ { "kind": "folder", "many": true } ]
+}

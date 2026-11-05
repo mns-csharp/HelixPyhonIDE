@@ -1,0 +1,6 @@
+{
+  "name": "cd",
+  "synopsis": "cd [-|dir]",
+  "description": "Change the current working directory",
+  "args": [ { "kind": "folder" } ]
+}

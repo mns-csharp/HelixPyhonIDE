@@ -1,0 +1,11 @@
+{
+  "name": "tree",
+  "synopsis": "tree [-adL n] [path]",
+  "description": "Show a directory as an indented tree",
+  "options": [
+    { "names": ["-a"], "description": "Show hidden entries" },
+    { "names": ["-d"], "description": "List directories only" },
+    { "names": ["-L"], "description": "Descend only this many levels", "value": "text" }
+  ],
+  "args": [ { "kind": "folder" } ]
+}

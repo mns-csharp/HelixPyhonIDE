@@ -1,0 +1,14 @@
+{
+  "name": "read",
+  "synopsis": "read [-rs] [-p prompt] [-a array] [-d delim] [-n count] [name ...]",
+  "description": "Read a line from standard input into variables",
+  "options": [
+    { "names": ["-p"], "description": "Show a prompt before reading", "value": "text" },
+    { "names": ["-a"], "description": "Read fields into the named array instead of separate variables", "value": "variable" },
+    { "names": ["-n"], "description": "Read at most this many characters", "value": "text" },
+    { "names": ["-d"], "description": "Read until this character instead of newline", "value": "text" },
+    { "names": ["-t"], "description": "Accepted but has no effect (no timeout support)", "value": "text" },
+    { "names": ["-r"], "description": "Read the line literally, without removing backslash line continuations" }
+  ],
+  "args": [ { "kind": "variable", "many": true } ]
+}

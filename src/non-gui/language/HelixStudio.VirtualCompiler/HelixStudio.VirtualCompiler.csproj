@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.VirtualCompiler</RootNamespace>
+    <AssemblyName>HelixStudio.VirtualCompiler</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelixStudio.Python\HelixStudio.Python.csproj" />
+    <!-- Solution policy rule 3 (PY8003) is language-aware and shared with the non-Python sweep,
+         so it lives in the foundation assembly. HelixStudio.Core has no project references of
+         its own, so this cannot introduce a cycle. -->
+    <ProjectReference Include="..\..\foundation\HelixStudio.Core\HelixStudio.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Typeshed\**\*.pyi" />
+  </ItemGroup>
+</Project>

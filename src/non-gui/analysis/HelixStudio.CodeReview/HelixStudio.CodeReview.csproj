@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>HelixPythonNamespace.CodeReview</RootNamespace>
+    <AssemblyName>HelixStudio.CodeReview</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The Python front end is the only dependency, deliberately. The review engine
+         reads source and an AST; it must not need a solution model, a workspace, or a
+         message pump, so the whole rule library runs in the fast non-GUI suite. -->
+    <ProjectReference Include="..\..\language\HelixStudio.Python\HelixStudio.Python.csproj" />
+  </ItemGroup>
+</Project>

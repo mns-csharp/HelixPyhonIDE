@@ -1,0 +1,9 @@
+{
+  "name": "head",
+  "synopsis": "head [-n count] [file ...]",
+  "description": "Print the first lines of a file",
+  "options": [
+    { "names": ["-n"], "description": "Print this many lines instead of 10", "value": "text" }
+  ],
+  "args": [ { "kind": "file", "many": true } ]
+}

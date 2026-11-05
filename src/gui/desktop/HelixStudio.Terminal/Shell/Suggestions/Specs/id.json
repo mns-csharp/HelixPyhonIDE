@@ -1,0 +1,5 @@
+{
+  "name": "id",
+  "synopsis": "id",
+  "description": "Print the current user and group IDs"
+}

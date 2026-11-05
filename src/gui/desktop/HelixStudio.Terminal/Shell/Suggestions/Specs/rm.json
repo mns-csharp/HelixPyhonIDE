@@ -1,0 +1,12 @@
+{
+  "name": "rm",
+  "synopsis": "rm [-rfdv] path ...",
+  "description": "Remove files and directories",
+  "options": [
+    { "names": ["-r", "-R"], "description": "Remove directories and their contents recursively" },
+    { "names": ["-f"], "description": "Ignore missing files and never complain" },
+    { "names": ["-d"], "description": "Remove empty directories without -r" },
+    { "names": ["-v"], "description": "Print each path as it is removed" }
+  ],
+  "args": [ { "kind": "path", "many": true } ]
+}

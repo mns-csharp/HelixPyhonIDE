@@ -1,0 +1,15 @@
+{
+  "name": "declare",
+  "aliases": ["typeset"],
+  "synopsis": "declare [-airx] [name[=value] ...]",
+  "description": "Declare variables and set their attributes",
+  "options": [
+    { "names": ["-f"], "description": "List function names instead of variables" },
+    { "names": ["-g"], "description": "Declare the variable globally instead of locally to the function" },
+    { "names": ["-i"], "description": "Treat the variable as an integer, evaluating its value arithmetically" },
+    { "names": ["-x"], "description": "Mark the variable for export" },
+    { "names": ["-a"], "description": "Make the variable an array" },
+    { "names": ["-r"], "description": "Make the variable read-only" }
+  ],
+  "args": [ { "kind": "variable", "many": true } ]
+}

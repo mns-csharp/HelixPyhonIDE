@@ -1,0 +1,9 @@
+{
+  "name": "unset",
+  "synopsis": "unset [-fv] name ...",
+  "description": "Remove variables or functions",
+  "options": [
+    { "names": ["-f"], "description": "Treat each name as a function instead of a variable" }
+  ],
+  "args": [ { "kind": "variable", "many": true } ]
+}
