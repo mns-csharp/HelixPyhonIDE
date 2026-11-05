@@ -1,5 +1,7 @@
 # HelixPython
 
+![HelixPython IDE](assets/product/banner/helixpython-ide-banner.png)
+
 HelixPython is a visual-first Windows desktop IDE for Python. It combines editing, project and
 solution management, code generation, analysis, debugging, profiling, notebook editing, and test
 running in one application.
